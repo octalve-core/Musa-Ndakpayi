@@ -15,7 +15,7 @@ export function SiteHeader(){
   <a href="#main-content" className="sr-only z-[90] rounded-md bg-white p-3 text-[#073f86] focus:not-sr-only focus:fixed focus:left-4 focus:top-4">Skip to main content</a>
   <header onKeyDown={event=>{if(open&&event.key==='Escape'){setOpen(false);toggleRef.current?.focus();}}} className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 shadow-[0_2px_18px_rgba(8,36,77,.04)] backdrop-blur-lg">
    <Container className="flex h-[76px] items-center justify-between gap-4 sm:h-20">
-    <Link href="/" onClick={()=>setOpen(false)} aria-label="Usman Musa Ndakpayi — home" className="inline-flex min-w-0 shrink-0 items-center gap-2.5 rounded-md">
+    <Link href="/" onClick={()=>setOpen(false)} aria-label="Musa Usman Ndakpayi — home" className="inline-flex min-w-0 shrink-0 items-center gap-2.5 rounded-md">
      <Image src="/brand/mun-header.png" alt="Musa Usman Ndakpayi campaign logo" width={1420} height={476} priority sizes="144px" className="h-10 w-[144px] object-contain object-left"/>
     </Link>
     <nav aria-label="Primary navigation" className="hidden items-center gap-3 xl:flex 2xl:gap-5">

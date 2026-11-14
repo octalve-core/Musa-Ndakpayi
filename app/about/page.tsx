@@ -10,8 +10,8 @@ import {biographyHighlights,biographicalRecord,professionalSkills} from '@/lib/p
 import {priorities} from '@/lib/content';
 
 export const metadata:Metadata={
- title:'About Usman Musa Ndakpayi',
- description:'Meet Usman Musa Ndakpayi: political science graduate, project-management professional and community advocate standing for Chanchaga Federal Constituency in 2027.'
+ title:'About Musa Usman Ndakpayi',
+ description:'Meet Musa Usman Ndakpayi: political science graduate, project-management professional and community advocate standing for Chanchaga Federal Constituency in 2027.'
 };
 
 const accentStyle={
@@ -22,14 +22,14 @@ const accentStyle={
 
 export default function About(){
  return <>
-  <PageHero label="Leadership · Experience · Service" title="About Usman Musa Ndakpayi" description="A background in political science, practical management and community service, bringing a thoughtful perspective to Chanchaga's future."/>
+  <PageHero label="Leadership · Experience · Service" title="About Musa Usman Ndakpayi" description="A background in political science, practical management and community service, bringing a thoughtful perspective to Chanchaga's future."/>
 
   <section aria-labelledby="profile-introduction" className="py-16 sm:py-24"><Container>
    <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,.92fr)] lg:gap-16">
     <div>
      <p className="text-xs font-semibold uppercase tracking-[.19em] text-[#073f86]">Personal and professional background</p>
      <h2 id="profile-introduction" className="mt-4 max-w-2xl text-3xl font-semibold leading-tight tracking-[-.04em] text-slate-900 sm:text-4xl lg:text-[2.6rem]">Knowledge, experience and a commitment to community.</h2>
-     <p className="mt-6 text-base leading-8 text-slate-600">Usman Musa Ndakpayi is the Nigeria Democratic Congress (NDC) candidate for Chanchaga Federal Constituency in the 2027 House of Representatives election. His background brings together political study, professional management and community engagement.</p>
+     <p className="mt-6 text-base leading-8 text-slate-600">Musa Usman Ndakpayi is the Nigeria Democratic Congress (NDC) candidate for Chanchaga Federal Constituency in the 2027 House of Representatives election. His background brings together political study, professional management and community engagement.</p>
      <p className="mt-4 text-base leading-8 text-slate-600">A graduate of Political Science from the University of Abuja, Ndakpayi developed a strong interest in governance, dialogue and conflict resolution. His dissertation examined peace and conflict resolution, using the Kaduna crisis as a case study.</p>
      <p className="mt-4 text-base leading-8 text-slate-600">His career includes construction-site management at Edile Construction Company Limited, organising people and projects, and supporting enterprise initiatives designed to equip students, graduates and disadvantaged people with practical opportunities for self-reliance.</p>
      <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">

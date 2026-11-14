@@ -4,7 +4,7 @@ import {SiteHeader} from '@/components/layout/site-header';
 import {SiteFooter} from '@/components/layout/site-footer';
 import {site} from '@/lib/site';
 export const metadata:Metadata={
- title:{default:'Usman Musa Ndakpayi | Chanchaga 2027',template:'%s | Ndakpayi 2027'},
+ title:{default:'Musa Usman Ndakpayi | Chanchaga 2027',template:'%s | Ndakpayi 2027'},
  description:site.description,
  icons:{icon:[{url:'/brand/mun-icon.png',type:'image/png'}],shortcut:'/brand/mun-icon.png',apple:[{url:'/brand/mun-icon.png',type:'image/png'}]},
  robots:{index:false,follow:false},

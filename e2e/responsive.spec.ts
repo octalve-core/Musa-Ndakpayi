@@ -84,7 +84,7 @@ test('approved MUN header and footer logos load without distortion',async({page,
 test('biography page presents education, career and community sections professionally',async({page})=>{
  await page.setViewportSize({width:375,height:812});
  await page.goto('/about');
- await expect(page.getByRole('heading',{name:'About Usman Musa Ndakpayi'})).toBeVisible();
+ await expect(page.getByRole('heading',{name:'About Musa Usman Ndakpayi'})).toBeVisible();
  await expect(page.getByText('B.Sc. in Political Science',{exact:true})).toBeVisible();
  await expect(page.getByText('Edile Construction Company Limited',{exact:true})).toBeVisible();
  await expect(page.getByRole('heading',{name:'Community initiatives and voluntary interests'})).toBeVisible();
