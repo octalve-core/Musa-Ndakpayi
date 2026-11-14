@@ -1,0 +1,3 @@
+import Link from 'next/link';
+import {Container} from '@/components/ui/container';
+export default function NotFound(){return <Container className="py-32 text-center"><p className="text-sm font-semibold uppercase tracking-widest text-[#073f86]">Page unavailable</p><h1 className="mt-3 text-4xl font-semibold text-slate-900">This page could not be found.</h1><p className="mt-4 text-slate-600">Try returning to the homepage or browsing the published priorities.</p><Link href="/" className="mt-8 inline-flex rounded-md bg-[#073f86] px-6 py-3 text-sm font-semibold text-white">Back to homepage</Link></Container>}

@@ -1,0 +1,6 @@
+@import "tailwindcss";
+:root{color-scheme:light}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:#15171a;font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+::selection{background:#fdb515;color:#082b54}
+:focus-visible{outline:3px solid #ffb71b;outline-offset:3px}
