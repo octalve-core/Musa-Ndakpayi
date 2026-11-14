@@ -1,5 +1,4 @@
 import type {Metadata} from 'next';
-import Link from 'next/link';
 import {PageHero} from '@/components/ui/page-hero';
 import {Container} from '@/components/ui/container';
 import {AgendaTabs} from '@/components/agenda/agenda-tabs';
