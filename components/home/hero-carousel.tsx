@@ -7,7 +7,7 @@ import {Container} from '@/components/ui/container';
 const slides=[
  {eyebrow:'CHANCHAGA FEDERAL CONSTITUENCY · 2027',title:'A voice for Chanchaga.',accent:'A responsibility to serve.',description:'Learn about Musa Usman Ndakpayi, his priorities and the opportunities ahead for Chanchaga.'},
  {eyebrow:'THE WORK OF REPRESENTATION',title:'People. Policy.',accent:'Accountability.',description:'Education, enterprise, healthcare and public safety deserve focused attention and purposeful representation.'},
- {eyebrow:'NIGER STATE · NIGERIA',title:'Rooted in community.',accent:'Focused on progress.',description:'Discover the ideas, people and community priorities at the heart of Chanchaga's future.'}
+ {eyebrow:'NIGER STATE · NIGERIA',title:'Rooted in community.',accent:'Focused on progress.',description:'Discover the ideas, people and community priorities at the heart of Chanchaga’s future.'}
 ] as const;
 
 export function HeroCarousel(){
