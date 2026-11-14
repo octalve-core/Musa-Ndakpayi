@@ -14,18 +14,18 @@ User provided 20 screenshots from koh2027.ng as **visual style references**. The
 | 06 | Testimonials carousel | **Excluded** until named, consented, attributable statements supplied |
 | 07 | Campaign gallery | Photo archive layout; publish only licensed/approved imagery |
 | 08 | Manifesto download and AI assistant CTA | Agenda CTA; downloads/chat not simulated |
-| 09 | Volunteer/subscribe banner | Public participation CTA; no unimplemented email capture |
-| 10 | Social-follow panels | Omitted pending verified handles |
-| 11 | Dark structured footer | `SiteFooter` |
-| 12 | Footer social and legal strip | `SiteFooter` |
-| 13 | About hero plus candidate introduction | /about |
-| 14 | Six platform cards | /about and /platforms |
-| 15 | Last platform plus footer | /platforms |
-| 16 | Pillar tabs with descriptions | `AgendaTabs` |
-| 17 | Last pillar and document links | /manifesto |
-| 18 | Events filtering and empty state | /events (no unverified dates) |
-| 19 | News search/filter grid | `NewsList` |
-| 20 | Campaign gallery albums and contact forms | /gallery, /contact; no false form submission |
+| 09 | Follow campaign and subscription banner | Public participation CTA; no unimplemented email capture |
+| 10 | Full footer, navigation and legal strip | `SiteFooter` |
+| 11 | About hero plus candidate introduction | /about |
+| 12 | About page core values platform cards | /about and /platforms |
+| 13 | Final platform preview and footer | /about and /platforms |
+| 14 | Platform overview and tabs | `AgendaTabs` |
+| 15 | Last legislative pillar and footer | /manifesto |
+| 16 | Events filtering and empty state | /events (no unverified dates) |
+| 17 | News search/filter grid | `NewsList` |
+| 18 | News continuation / grid density | `NewsList` |
+| 19 | Photo gallery albums | /gallery; publish only licensed imagery |
+| 20 | Contact layout and enquiry form | /contact; no false form submission |
 
 ## UI implementation standards
 
