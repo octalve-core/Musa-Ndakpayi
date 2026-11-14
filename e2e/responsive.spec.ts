@@ -81,14 +81,23 @@ test('approved MUN header and footer logos load without distortion',async({page,
  }
 });
 
-test('biography page includes attributed education, career and community sections',async({page})=>{
+test('biography page presents education, career and community sections professionally',async({page})=>{
  await page.setViewportSize({width:375,height:812});
  await page.goto('/about');
- await expect(page.getByRole('heading',{name:'About Usman Musa Ndakpayi'})).toBeVisible();
+ await expect(page.getByRole('heading',{name:'About Musa Usman Ndakpayi'})).toBeVisible();
  await expect(page.getByText('B.Sc. in Political Science',{exact:true})).toBeVisible();
- await expect(page.getByText('Edile Construction Company Limited · dates not stated')).toBeVisible();
+ await expect(page.getByText('Edile Construction Company Limited',{exact:true})).toBeVisible();
  await expect(page.getByRole('heading',{name:'Community initiatives and voluntary interests'})).toBeVisible();
- await expect(page.getByText(/professional document supplied for this website and await supporting verification/)).toBeVisible();
- const record=page.getByRole('link',{name:'Official INEC candidate record'});
- await expect(record).toHaveAttribute('href',/inecnigeria\.org/);
+ await expect(page.getByText(/Ndakpayi has supported enterprise-oriented activities/)).toBeVisible();
+ await expect(page.getByRole('link',{name:'His priorities for Chanchaga'})).toHaveAttribute('href','/platforms');
+});
+
+test('campaign contact email opens an email composer and draft notices are absent',async({page})=>{
+ await page.setViewportSize({width:375,height:812});
+ await page.goto('/contact');
+ await expect(page.locator('main').getByRole('link',{name:'info@musandakpayi.com'})).toHaveAttribute('href','mailto:info@musandakpayi.com');
+ await expect(page.getByRole('link',{name:'Send an email'})).toHaveAttribute('href','mailto:info@musandakpayi.com');
+ await expect(page.getByText(/No unverified contact information is published/)).toHaveCount(0);
+ await page.goto('/about');
+ await expect(page.getByText(/professional document supplied|await supporting verification/)).toHaveCount(0);
 });

@@ -45,10 +45,9 @@ export function AgendaTabs(){
      <p className="mt-4 text-base leading-8 text-slate-600">{active.detail}</p>
     </div>
    </div>
-   <div className="mt-9 border-t border-slate-200 pt-8"><h3 className="text-lg font-semibold text-slate-900">Potential legislative and oversight measures</h3>
+   <div className="mt-9 border-t border-slate-200 pt-8"><h3 className="text-lg font-semibold text-slate-900">Legislative focus areas</h3>
     <div className="mt-5 space-y-3">{active.mechanisms.map(measure=><div key={measure} className="flex gap-4 rounded-xl border border-slate-100 bg-[#f7f9fc] p-5"><CheckCircle2 size={20} className="mt-1 shrink-0 text-[#13864b]"/><p className="text-sm leading-7 text-slate-700">{measure}</p></div>)}</div>
    </div>
-   <p className="mt-8 border-l-[3px] border-[#ffb71b] bg-[#fffbef] px-5 py-4 text-sm leading-7 text-slate-700">These are policy directions for discussion. They do not imply that a bill has been introduced, funding secured, or a project completed. Publication of a candidate-approved manifesto requires the campaign’s signed material.</p>
   </div>
  </div>;
 }
