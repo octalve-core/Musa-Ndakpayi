@@ -77,3 +77,15 @@ test('approved MUN header and footer logos load without distortion',async({page,
   expect(response.headers()['content-type']).toContain('image/png');
  }
 });
+
+test('biography page includes attributed education, career and community sections',async({page})=>{
+ await page.setViewportSize({width:375,height:812});
+ await page.goto('/about');
+ await expect(page.getByRole('heading',{name:'About Usman Musa Ndakpayi'})).toBeVisible();
+ await expect(page.getByText('B.Sc. in Political Science',{exact:true})).toBeVisible();
+ await expect(page.getByText('Edile Construction Company Limited · dates not stated')).toBeVisible();
+ await expect(page.getByRole('heading',{name:'Community initiatives and voluntary interests'})).toBeVisible();
+ await expect(page.getByText(/professional document supplied for this website and await supporting verification/)).toBeVisible();
+ const record=page.getByRole('link',{name:'Official INEC candidate record'});
+ await expect(record).toHaveAttribute('href',/inecnigeria\.org/);
+});
