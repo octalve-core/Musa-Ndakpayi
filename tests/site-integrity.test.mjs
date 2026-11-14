@@ -44,3 +44,25 @@ test('responsive browser checks cover all requested viewport widths',()=>{
  const suite=content('e2e/responsive.spec.ts');
  for(const width of [320,375,430,768,1024,1280,1440,1920])assert.match(suite,new RegExp('\\b'+width+'\\b'));
 });
+
+test('approved brand artwork replaces temporary text monograms without changing logo proportions',()=>{
+ const header=content('components/layout/site-header.tsx');
+ const footer=content('components/layout/site-footer.tsx');
+ const layout=content('app/layout.tsx');
+ assert.match(header,/src="\/brand\/mun-header\.png"/);
+ assert.match(footer,/src="\/brand\/mun-footer-2027\.png"/);
+ assert.match(layout,/url:'\/brand\/mun-icon\.png'/);
+ assert.match(header,/object-contain/);
+ assert.match(footer,/object-contain/);
+ assert.doesNotMatch(header,/>MN<\/span>/);
+ assert.doesNotMatch(footer,/>MN<\/span>/);
+});
+
+test('all three authentic PNG brand assets are present under public/brand',()=>{
+ for(const name of ['mun-header.png','mun-footer-2027.png','mun-icon.png']){
+  const path=resolve(root,'public','brand',name);
+  assert.ok(existsSync(path),'Missing approved brand asset: '+name);
+  const data=readFileSync(path);
+  assert.deepEqual([...data.subarray(0,8)],[137,80,78,71,13,10,26,10],name+' is not PNG');
+ }
+});

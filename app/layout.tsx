@@ -6,6 +6,7 @@ import {site} from '@/lib/site';
 export const metadata:Metadata={
  title:{default:'Usman Musa Ndakpayi | Chanchaga 2027',template:'%s | Ndakpayi 2027'},
  description:site.description,
+ icons:{icon:[{url:'/brand/mun-icon.png',type:'image/png'}],shortcut:'/brand/mun-icon.png',apple:[{url:'/brand/mun-icon.png',type:'image/png'}]},
  robots:{index:false,follow:false},
  openGraph:{title:site.name,description:site.description,locale:'en_NG',type:'website'}
 };
