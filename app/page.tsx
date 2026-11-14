@@ -22,7 +22,8 @@ export default function HomePage(){
   <div><p className="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-[#0a5d9c]">The candidate</p>
    <h2 className="max-w-xl text-3xl font-semibold leading-tight tracking-[-.045em] text-slate-900 sm:text-4xl">Meet Usman Musa Ndakpayi.</h2>
    <p className="mt-6 text-base leading-8 text-slate-600">Usman Musa Ndakpayi is listed by the Independent National Electoral Commission as the Nigeria Democratic Congress candidate for Chanchaga Federal Constituency in the 2027 House of Representatives election.</p>
-   <p className="mt-4 text-base leading-8 text-slate-600">Public reporting records his attention to youth participation, economic opportunity, education, healthcare and transparent investigation of reported deaths in security custody.</p>
+   <p className="mt-4 text-base leading-8 text-slate-600">His supplied professional biography records Political Science studies at the University of Abuja, construction-site management and enterprise-support activities involving students and economically disadvantaged participants.</p>
+   <p className="mt-4 text-base leading-8 text-slate-600">Separate public reporting describes his interest in youth participation, economic opportunity, education, healthcare and accountable institutions.</p>
    <div className="mt-6 flex items-start gap-3 text-sm text-slate-700"><ShieldCheck className="mt-0.5 shrink-0 text-[#18a65b]" size={20}/><span>Documented candidature on INEC’s final list</span></div>
    <div className="mt-4 flex items-start gap-3 text-sm text-slate-700"><ShieldCheck className="mt-0.5 shrink-0 text-[#18a65b]" size={20}/><span>Public statements linked to their original reports</span></div>
    <Link href="/about" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#073f86]">Read his public profile <ArrowRight size={18}/></Link>

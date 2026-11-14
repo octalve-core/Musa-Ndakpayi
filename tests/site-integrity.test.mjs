@@ -66,3 +66,15 @@ test('all three authentic PNG brand assets are present under public/brand',()=>{
   assert.deepEqual([...data.subarray(0,8)],[137,80,78,71,13,10,26,10],name+' is not PNG');
  }
 });
+
+test('candidate biography is source-attributed and avoids fabricated credentials',()=>{
+ const profile=content('lib/profile.ts');
+ const about=content('app/about/page.tsx');
+ assert.match(profile,/University of Abuja/);
+ assert.match(profile,/Kaduna crisis/);
+ assert.match(profile,/Edile Construction Company Limited/);
+ assert.match(profile,/enterprise activities/);
+ assert.match(about,/professional document supplied/);
+ assert.match(about,/Official INEC candidate record/);
+ assert.doesNotMatch(about,/minister|governor|incumbent|has delivered [0-9]+|university professor/i);
+});

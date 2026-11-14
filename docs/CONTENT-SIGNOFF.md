@@ -4,7 +4,7 @@ The initial site intentionally makes no unsourced claim of electoral victory, co
 
 - [ ] Candidate approves official full name and public title (INEC currently lists USMAN MUSA NDAKPAYI)
 - [ ] Campaign provides a high-resolution authentic portrait, hero image, logo, colour identity permissions and release rights
-- [ ] Biography signed off: dates, education, career, work and achievements with attributable evidence
+- [ ] Biography signed off: dates, education, career, work and achievements with attributable evidence; check name order, degree and chronology against `docs/BIOGRAPHY-FACT-CHECK.md`
 - [ ] Candidate approves each specific legislative promise and final manifesto PDFs; distinguish political proposals from bills already sponsored
 - [ ] Campaign verifies contact email, phone number, office address and active social-media profiles
 - [ ] Organisers confirm public event dates, venue and permission to publish
