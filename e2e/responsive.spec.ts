@@ -60,3 +60,20 @@ test('search filters sourced public records locally',async({page})=>{
  await search.fill('text that is not published');
  await expect(page.getByText('No updates match those filters.')).toBeVisible();
 });
+
+test('approved MUN header and footer logos load without distortion',async({page,request})=>{
+ await page.setViewportSize({width:375,height:812});
+ await page.goto('/');
+ const header=page.getByRole('img',{name:'Musa Usman Ndakpayi campaign logo'});
+ await expect(header).toBeVisible();
+ await expect.poll(()=>header.evaluate(img=>(img as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+ const footer=page.getByRole('img',{name:'Musa Usman Ndakpayi 2027 campaign logo'});
+ await footer.scrollIntoViewIfNeeded();
+ await expect(footer).toBeVisible();
+ await expect.poll(()=>footer.evaluate(img=>(img as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+ for(const name of ['mun-header.png','mun-footer-2027.png','mun-icon.png']){
+  const response=await request.get('/brand/'+name);
+  expect(response.ok(),'Failed to load '+name).toBeTruthy();
+  expect(response.headers()['content-type']).toContain('image/png');
+ }
+});

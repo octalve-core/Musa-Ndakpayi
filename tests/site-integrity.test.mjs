@@ -57,3 +57,12 @@ test('approved brand artwork replaces temporary text monograms without changing 
  assert.doesNotMatch(header,/>MN<\/span>/);
  assert.doesNotMatch(footer,/>MN<\/span>/);
 });
+
+test('all three authentic PNG brand assets are present under public/brand',()=>{
+ for(const name of ['mun-header.png','mun-footer-2027.png','mun-icon.png']){
+  const path=resolve(root,'public','brand',name);
+  assert.ok(existsSync(path),'Missing approved brand asset: '+name);
+  const data=readFileSync(path);
+  assert.deepEqual([...data.subarray(0,8)],[137,80,78,71,13,10,26,10],name+' is not PNG');
+ }
+});
