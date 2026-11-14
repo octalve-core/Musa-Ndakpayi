@@ -14,6 +14,9 @@ for(const width of widths){
    if(path==='/'){
     await page.screenshot({path:'test-results/home-'+width+'.png',fullPage:true,animations:'disabled'});
    }
+   if(path==='/about'&&(width===375||width===1440)){
+    await page.screenshot({path:'test-results/about-'+width+'.png',fullPage:true,animations:'disabled'});
+   }
   }
  });
 }
