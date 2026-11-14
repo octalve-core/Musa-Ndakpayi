@@ -44,3 +44,16 @@ test('responsive browser checks cover all requested viewport widths',()=>{
  const suite=content('e2e/responsive.spec.ts');
  for(const width of [320,375,430,768,1024,1280,1440,1920])assert.match(suite,new RegExp('\\b'+width+'\\b'));
 });
+
+test('approved brand artwork replaces temporary text monograms without changing logo proportions',()=>{
+ const header=content('components/layout/site-header.tsx');
+ const footer=content('components/layout/site-footer.tsx');
+ const layout=content('app/layout.tsx');
+ assert.match(header,/src="\/brand\/mun-header\.png"/);
+ assert.match(footer,/src="\/brand\/mun-footer-2027\.png"/);
+ assert.match(layout,/url:'\/brand\/mun-icon\.png'/);
+ assert.match(header,/object-contain/);
+ assert.match(footer,/object-contain/);
+ assert.doesNotMatch(header,/>MN<\/span>/);
+ assert.doesNotMatch(footer,/>MN<\/span>/);
+});

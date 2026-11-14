@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import {usePathname} from 'next/navigation';
 import {useRef,useState} from 'react';
 import {Menu,X} from 'lucide-react';
@@ -15,8 +16,7 @@ export function SiteHeader(){
   <header onKeyDown={event=>{if(open&&event.key==='Escape'){setOpen(false);toggleRef.current?.focus();}}} className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 shadow-[0_2px_18px_rgba(8,36,77,.04)] backdrop-blur-lg">
    <Container className="flex h-[76px] items-center justify-between gap-4 sm:h-20">
     <Link href="/" onClick={()=>setOpen(false)} aria-label="Usman Musa Ndakpayi — home" className="inline-flex min-w-0 shrink-0 items-center gap-2.5 rounded-md">
-     <span aria-hidden="true" className="flex size-10 shrink-0 items-center justify-center rounded-md bg-[#073f86] text-[13px] font-semibold tracking-tight text-white">MN</span>
-     <span className="flex min-w-0 flex-col leading-tight"><span className="text-sm font-semibold tracking-[-.025em] text-slate-900">NDAKPAYI</span><span className="text-[10px] font-medium tracking-[.17em] text-[#073f86]">2027 · CHANCHAGA</span></span>
+     <Image src="/brand/mun-header.png" alt="Musa Usman Ndakpayi campaign logo" width={1420} height={476} priority sizes="144px" className="h-10 w-[144px] object-contain object-left"/>
     </Link>
     <nav aria-label="Primary navigation" className="hidden items-center gap-3 xl:flex 2xl:gap-5">
      {navigation.map(item=><Link key={item.href} href={item.href} aria-current={pathname===item.href?'page':undefined} className={['inline-flex min-h-11 shrink-0 items-center rounded-sm border-b-2 px-1.5 pt-0.5 text-[13px] font-medium transition-colors',pathname===item.href?'border-[#ffb71b] text-[#073f86]':'border-transparent text-slate-700 hover:border-[#ffb71b]/70 hover:text-[#073f86]'].join(' ')}>{item.label}</Link>)}
