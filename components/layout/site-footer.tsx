@@ -10,14 +10,13 @@ export function SiteFooter(){
    <div className="grid gap-11 border-b border-white/15 pb-14 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr] lg:gap-16">
     <div className="max-w-sm">
      <Link href="/" aria-label="Musa Usman Ndakpayi 2027 — home" className="inline-flex h-11 w-[183px] items-center justify-start rounded-md"><Image src="/brand/mun-footer-2027.png" alt="Musa Usman Ndakpayi 2027 campaign logo" width={1066} height={180} sizes="183px" className="h-full w-full object-contain object-left"/></Link>
-     <p className="mt-5 text-sm leading-7 text-slate-300">Public information about the Chanchaga Federal Constituency candidacy, documented issues and the role of legislative representation.</p>
-     <p className="mt-5 text-xs leading-6 text-slate-400">Policy options on this website are not presented as completed projects or approved campaign promises.</p>
+     <p className="mt-5 text-sm leading-7 text-slate-300">Usman Musa Ndakpayi · Chanchaga Federal Constituency, 2027. A commitment to opportunity, meaningful representation and community progress.</p>
     </div>
     <div><h2 className="mb-5 text-sm font-semibold text-white">Explore the website</h2><nav aria-label="Footer navigation" className="grid grid-cols-2 gap-x-5 gap-y-3">{navigation.map(item=><Link href={item.href} key={item.href} className="w-fit rounded-sm py-1 text-sm text-slate-300 transition-colors hover:text-white">{item.label}</Link>)}</nav></div>
     <div><h2 className="mb-5 text-sm font-semibold text-white">Constituency information</h2>
      <p className="flex items-start gap-3 text-sm leading-7 text-slate-300"><MapPin className="mt-1 shrink-0 text-[#ffb71b]" size={18}/>{site.constituency}, {site.location}</p>
      <p className="mt-4 text-sm leading-7 text-slate-300">{site.party}</p>
-     <Link href="/contact" className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-[#ffcc55] transition-colors hover:text-white">Contact information <ArrowUpRight size={16}/></Link>
+     <a href="mailto:info@musandakpayi.com" className="mt-5 inline-flex min-h-11 items-center gap-2 break-all text-sm font-medium text-[#ffcc55] transition-colors hover:text-white">info@musandakpayi.com <ArrowUpRight size={16}/></a>
     </div>
    </div>
    <div className="flex flex-col items-start justify-between gap-4 pt-7 text-xs leading-6 text-slate-400 sm:flex-row sm:items-center">
