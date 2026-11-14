@@ -27,3 +27,20 @@ test('no social handle, phone or email is invented in live metadata',()=>{
  const contact=content('app/contact/page.tsx');
  assert.doesNotMatch(contact,/@gmail.com|@yahoo.com|\+234\d{9}/);
 });
+
+test('agenda priority tabs expose URL anchor targets',()=>{
+ const tabs=content('components/agenda/agenda-tabs.tsx');
+ assert.match(tabs,/id=\{priority.slug\}/);
+ assert.match(tabs,/hashchange/);
+ assert.match(tabs,/aria-selected/);
+});
+test('events show no fabricated dates or nonfunctional filter pills',()=>{
+ const events=content('app/events/page.tsx');
+ assert.doesNotMatch(events,/Previous activities<\/span>/);
+ assert.match(events,/No forthcoming events have been confirmed/);
+ assert.doesNotMatch(events,/<form/);
+});
+test('responsive browser checks cover all requested viewport widths',()=>{
+ const suite=content('e2e/responsive.spec.ts');
+ for(const width of [320,375,430,768,1024,1280,1440,1920])assert.match(suite,new RegExp('\\b'+width+'\\b'));
+});

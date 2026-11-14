@@ -1,0 +1,62 @@
+import {test,expect} from '@playwright/test';
+
+const widths=[320,375,430,768,1024,1280,1440,1920] as const;
+const pages=['/','/about','/platforms','/manifesto','/events','/news','/gallery','/contact','/privacy'] as const;
+
+for(const width of widths){
+ test('responsive pages have no horizontal document overflow at '+width+'px',async({page})=>{
+  await page.setViewportSize({width,height:900});
+  for(const path of pages){
+   await page.goto(path,{waitUntil:'domcontentloaded'});
+   await expect(page.locator('main h1').first()).toBeVisible();
+   const docWidth=await page.evaluate(()=>document.documentElement.scrollWidth);
+   expect(docWidth,'Document overflow on '+path+' at '+width+'px').toBeLessThanOrEqual(width+1);
+   if(path==='/'){
+    await page.screenshot({path:'test-results/home-'+width+'.png',fullPage:true,animations:'disabled'});
+   }
+  }
+ });
+}
+
+test('small-screen navigation opens, navigates and closes',async({page})=>{
+ await page.setViewportSize({width:375,height:812});
+ await page.goto('/');
+ const toggle=page.getByRole('button',{name:'Open navigation'});
+ await expect(toggle).toBeVisible();
+ await toggle.click();
+ await expect(page.getByRole('navigation',{name:'Mobile navigation'})).toBeVisible();
+ await page.getByRole('navigation',{name:'Mobile navigation'}).getByRole('link',{name:'Legislative Agenda'}).click();
+ await expect(page).toHaveURL(/\/manifesto$/);
+ await expect(page.getByRole('navigation',{name:'Mobile navigation'})).toBeHidden();
+});
+
+test('mobile navigation can close with Escape and return focus to toggle',async({page})=>{
+ await page.setViewportSize({width:320,height:720});
+ await page.goto('/');
+ await page.getByRole('button',{name:'Open navigation'}).click();
+ await page.getByRole('button',{name:'Close navigation'}).press('Escape');
+ await expect(page.getByRole('navigation',{name:'Mobile navigation'})).toBeHidden();
+ await expect(page.getByRole('button',{name:'Open navigation'})).toBeFocused();
+});
+
+test('agenda opens deep-linked priority and supports arrow-key navigation',async({page})=>{
+ await page.goto('/manifesto#floods');
+ const selected=page.getByRole('tab',{name:/Flood resilience/});
+ await expect(selected).toHaveAttribute('aria-selected','true');
+ await expect(page.getByRole('tabpanel')).toContainText('Flood resilience & safer communities');
+ await selected.focus();
+ await selected.press('ArrowRight');
+ await expect(page.getByRole('tab',{name:/Roads, water/})).toHaveAttribute('aria-selected','true');
+ await expect(page).toHaveURL(/#infrastructure$/);
+ await page.reload();
+ await expect(page.getByRole('tab',{name:/Roads, water/})).toHaveAttribute('aria-selected','true');
+});
+
+test('search filters sourced public records locally',async({page})=>{
+ await page.goto('/news');
+ const search=page.getByRole('searchbox',{name:'Search updates'});
+ await search.fill('custodial');
+ await expect(page.locator('main article')).toHaveCount(1);
+ await search.fill('text that is not published');
+ await expect(page.getByText('No updates match those filters.')).toBeVisible();
+});
