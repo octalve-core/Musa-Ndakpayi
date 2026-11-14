@@ -27,7 +27,7 @@ export function HeroCarousel(){
   <Container className="relative z-10 flex items-center pb-36 pt-24 sm:pb-40 sm:pt-28">
    <div className="max-w-[850px]" aria-roledescription="slide" aria-label={'Slide '+(active+1)+' of '+slides.length} aria-live={playing?'off':'polite'}>
     <p className="mb-6 inline-flex max-w-full border-b-2 border-[#ffb71b] pb-3 text-[10px] font-medium uppercase tracking-[.11em] text-[#ffd05c] sm:text-xs sm:tracking-[.17em]">{slide.eyebrow}</p>
-    <h1 className="max-w-[850px] text-[2.35rem] min-[360px]:text-[clamp(2.7rem,6.1vw,5.5rem)] font-semibold leading-[1.09] tracking-[-.045em]">{slide.title}<span className="mt-1 block">{slide.accent}</span></h1>
+    <h1 className="max-w-[850px] text-[2.35rem] min-[360px]:text-[clamp(2.7rem,6.1vw,5rem)] font-semibold leading-[1.09] tracking-[-.045em]">{slide.title}<span className="mt-1 block">{slide.accent}</span></h1>
     <p className="mt-7 max-w-[580px] text-[15px] leading-7 text-blue-50 sm:mt-8 sm:text-lg sm:leading-8">{slide.description}</p>
     <div className="mt-8 flex flex-wrap items-center gap-3 sm:mt-9">
      <Link href="/platforms" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-[#ffb71b] px-5 py-3 text-sm font-semibold text-[#08284f] transition-colors hover:bg-[#ffd064] sm:px-6">Explore priorities <ArrowRight size={17}/></Link>
