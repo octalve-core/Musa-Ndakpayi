@@ -9,7 +9,7 @@ export function SiteFooter(){
   <Container className="pb-8 pt-16 sm:pt-20">
    <div className="grid gap-11 border-b border-white/15 pb-14 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr] lg:gap-16">
     <div className="max-w-sm">
-     <Link href="/" aria-label="Musa Usman Ndakpayi 2027 — home" className="inline-flex h-11 w-[183px] items-center justify-center rounded-md bg-white px-2 py-1"><Image src="/brand/mun-footer-2027.png" alt="Musa Usman Ndakpayi 2027 campaign logo" width={1066} height={180} sizes="167px" className="h-full w-full object-contain"/></Link>
+     <Link href="/" aria-label="Musa Usman Ndakpayi 2027 — home" className="inline-flex h-11 w-[183px] items-center justify-start rounded-md"><Image src="/brand/mun-footer-2027.png" alt="Musa Usman Ndakpayi 2027 campaign logo" width={1066} height={180} sizes="183px" className="h-full w-full object-contain object-left"/></Link>
      <p className="mt-5 text-sm leading-7 text-slate-300">Public information about the Chanchaga Federal Constituency candidacy, documented issues and the role of legislative representation.</p>
      <p className="mt-5 text-xs leading-6 text-slate-400">Policy options on this website are not presented as completed projects or approved campaign promises.</p>
     </div>
