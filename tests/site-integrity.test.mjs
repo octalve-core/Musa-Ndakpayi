@@ -37,7 +37,7 @@ test('agenda priority tabs expose URL anchor targets',()=>{
 test('events show no fabricated dates or nonfunctional filter pills',()=>{
  const events=content('app/events/page.tsx');
  assert.doesNotMatch(events,/Previous activities<\/span>/);
- assert.match(events,/No forthcoming events have been confirmed/);
+ assert.match(events,/Stay connected with our events/);
  assert.doesNotMatch(events,/<form/);
 });
 test('responsive browser checks cover all requested viewport widths',()=>{
@@ -67,14 +67,46 @@ test('all three authentic PNG brand assets are present under public/brand',()=>{
  }
 });
 
-test('candidate biography is source-attributed and avoids fabricated credentials',()=>{
+test('candidate biography uses a finished public-facing voice and avoids invented achievements',()=>{
  const profile=content('lib/profile.ts');
  const about=content('app/about/page.tsx');
  assert.match(profile,/University of Abuja/);
  assert.match(profile,/Kaduna crisis/);
  assert.match(profile,/Edile Construction Company Limited/);
- assert.match(profile,/enterprise activities/);
- assert.match(about,/professional document supplied/);
- assert.match(about,/Official INEC candidate record/);
+ assert.match(profile,/enterprise-support initiatives/);
+ assert.match(about,/A graduate of Political Science from the University of Abuja/);
+ assert.match(about,/His priorities for Chanchaga/);
  assert.doesNotMatch(about,/minister|governor|incumbent|has delivered [0-9]+|university professor/i);
+});
+
+test('campaign contact email is published as a working mailto link',()=>{
+ const contact=content('app/contact/page.tsx');
+ const footer=content('components/layout/site-footer.tsx');
+ assert.match(contact,/mailto:info@musandakpayi\.com/);
+ assert.match(contact,/info@musandakpayi\.com/);
+ assert.match(footer,/mailto:info@musandakpayi\.com/);
+});
+
+test('public pages contain no draft biography qualifications or verification notices',()=>{
+ const paths=[
+  'app/page.tsx','app/about/page.tsx','app/platforms/page.tsx','app/manifesto/page.tsx',
+  'app/events/page.tsx','app/gallery/page.tsx','app/contact/page.tsx','app/news/page.tsx',
+  'app/privacy/page.tsx','components/layout/site-footer.tsx','components/agenda/agenda-tabs.tsx',
+  'components/home/hero-carousel.tsx','lib/profile.ts'
+ ];
+ const text=paths.map(content).join('\n');
+ const banned=[
+  'The professional biography supplied for this website describes',
+  'His supplied biography lists','The entries below follow the submitted biographical document',
+  'The profile also lists','The biography describes','His submitted profile mentions',
+  'await supporting verification','Policy options on this website are not presented',
+  'Documented candidature on INEC','Public statements linked to their original reports',
+  'Publication of a candidate-approved manifesto requires',
+  'Only organiser-confirmed events will appear on this calendar',
+  'No illustrative photographs are presented as evidence of an event',
+  'Captions, permissions and sources are checked before publication',
+  'Official campaign email, phone and office contact details will be displayed',
+  'unverified contact information'
+ ];
+ for(const phrase of banned)assert.ok(!text.includes(phrase),'Public draft text remains: '+phrase);
 });
