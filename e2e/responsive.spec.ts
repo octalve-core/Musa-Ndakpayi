@@ -95,7 +95,7 @@ test('biography page presents education, career and community sections professio
 test('campaign contact email opens an email composer and draft notices are absent',async({page})=>{
  await page.setViewportSize({width:375,height:812});
  await page.goto('/contact');
- await expect(page.getByRole('link',{name:'info@musandakpayi.com'})).toHaveAttribute('href','mailto:info@musandakpayi.com');
+ await expect(page.locator('main').getByRole('link',{name:'info@musandakpayi.com'})).toHaveAttribute('href','mailto:info@musandakpayi.com');
  await expect(page.getByRole('link',{name:'Send an email'})).toHaveAttribute('href','mailto:info@musandakpayi.com');
  await expect(page.getByText(/No unverified contact information is published/)).toHaveCount(0);
  await page.goto('/about');
