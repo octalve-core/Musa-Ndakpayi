@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import Link from 'next/link';
 import {ExternalLink,ArrowRight} from 'lucide-react';
 import {PageHero} from '@/components/ui/page-hero';
+import {ConstituencyPhoto} from '@/components/ui/constituency-photo';
 import {Container} from '@/components/ui/container';
 import {SectionHeading} from '@/components/ui/section-heading';
 import {PolicyCard} from '@/components/ui/policy-card';
@@ -11,10 +12,7 @@ export const metadata:Metadata={title:'About Usman Musa Ndakpayi'};
 export default function About(){
  return <><PageHero label="Meet the candidate" title="About Usman Musa Ndakpayi" description="Chanchaga Federal Constituency · Niger State · House of Representatives, 2027"/>
  <section className="py-20 sm:py-24"><Container><div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-  <div className="relative min-h-[460px] overflow-hidden rounded-2xl bg-[linear-gradient(140deg,#0b5b95,#052d5d)] p-8 text-white sm:p-12">
-   <div aria-hidden className="absolute -right-36 -top-36 size-[500px] rounded-full border-[90px] border-white/10"/>
-   <div className="relative flex h-full flex-col justify-between"><span className="text-xs font-semibold uppercase tracking-[.2em] text-blue-100">2027 · NDC</span><div className="mt-32"><span className="text-6xl font-semibold tracking-[-.08em] sm:text-7xl">MN.</span><p className="mt-7 text-2xl font-semibold leading-tight">Chanchaga Federal Constituency</p><p className="mt-2 text-sm text-blue-100">Niger State · Nigeria</p></div></div>
-  </div>
+  <ConstituencyPhoto className="min-h-[420px] sm:min-h-[500px]"/>
   <div><p className="text-xs font-semibold uppercase tracking-[.2em] text-[#0a5d9c]">Public profile</p><h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">A candidacy in the public record.</h2>
    <p className="mt-6 text-base leading-8 text-slate-600">Usman Musa Ndakpayi is named on INEC’s final list of candidates as the Nigeria Democratic Congress candidate seeking to represent Chanchaga in the House of Representatives in 2027.</p>
    <p className="mt-5 text-base leading-8 text-slate-600">Reporting from 2026 includes engagements with youth organisations and statements on employment, education, scholarships, healthcare accessibility and the need for independent investigation of reported custodial deaths of miners in Minna.</p>
