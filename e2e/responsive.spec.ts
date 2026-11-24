@@ -110,6 +110,7 @@ test('gallery index supports uploaded albums, unique cards and full-image modal'
   await expect(page.getByRole('heading',{name:'Explore our moments'})).toBeVisible();
   await albumCards.first().click();
   const photos=page.getByRole('button',{name:/^View photo [0-9]+ of [0-9]+ in /});
+  await expect(photos.first()).toBeVisible();
   const count=await photos.count();
   expect(count).toBeGreaterThan(0);
   await photos.first().click();
