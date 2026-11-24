@@ -214,3 +214,19 @@ test('one visible required registration agreement links to the full terms and pr
  assert.match(terms,/does not authorise optional promotional calls/);
  assert.match(footer,/href="\/terms"/);
 });
+
+test('global header counts down to INEC House of Representatives election on 16 January 2027 WAT',()=>{
+ const source=content('components/layout/election-countdown-strip.tsx');
+ const header=content('components/layout/site-header.tsx');
+ assert.match(header,/<ElectionCountdownStrip\/>/);
+ assert.match(source,/2027-01-16T00:00:00\+01:00/);
+ assert.match(source,/Date\.now\(\)/);
+ assert.match(source,/setInterval\(refresh,1000\)/);
+ assert.match(source,/clearInterval\(timer\)/);
+ assert.match(source,/Math\.max\(0,Math\.floor/);
+ assert.match(source,/Math\.floor\(seconds\/86400\)/);
+ assert.match(source,/role="timer"/);
+ assert.match(source,/time dateTime="2027-01-16"/);
+ assert.match(source,/https:\/\/inecnigeria\.org\/elections\/calendar/);
+ assert.match(source,/sm:hidden/);
+});
