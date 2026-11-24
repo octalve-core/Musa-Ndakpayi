@@ -11,13 +11,19 @@
     "typecheck": "tsc --noEmit",
     "test": "node --test tests/*.test.mjs",
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "media:build": "node scripts/build-media.mjs",
+    "predev": "node scripts/build-media.mjs",
+    "prebuild": "node scripts/build-media.mjs",
+    "seed:admin": "node scripts/seed-admin.mjs"
   },
   "dependencies": {
     "next": "^16.0.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "lucide-react": "^0.468.0"
+    "lucide-react": "^0.468.0",
+    "@neondatabase/serverless": "^1.0.2",
+    "zod": "^4.1.12"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.0",

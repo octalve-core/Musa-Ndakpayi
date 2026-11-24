@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 
 const widths=[320,375,430,768,1024,1280,1440,1920] as const;
-const pages=['/','/about','/platforms','/manifesto','/events','/news','/gallery','/contact','/privacy'] as const;
+const pages=['/','/about','/platforms','/manifesto','/events','/news','/gallery','/contact','/privacy','/register'] as const;
 
 for(const width of widths){
  test('responsive pages have no horizontal document overflow at '+width+'px',async({page})=>{
@@ -100,4 +100,31 @@ test('campaign contact email opens an email composer and draft notices are absen
  await expect(page.getByText(/No unverified contact information is published/)).toHaveCount(0);
  await page.goto('/about');
  await expect(page.getByText(/professional document supplied|await supporting verification/)).toHaveCount(0);
+});
+
+test('gallery index is attractive before campaign photos are uploaded',async({page})=>{
+ await page.goto('/gallery');
+ await expect(page.getByRole('heading',{name:'Campaign gallery'})).toBeVisible();
+ await expect(page.getByRole('heading',{name:'Campaign photographs'})).toBeVisible();
+ await expect(page.getByText(/Minna City Gate photograph/)).toHaveCount(0);
+});
+
+test('membership registration fails closed without Neon and Turnstile',async({page,request})=>{
+ await page.goto('/register');
+ await expect(page.getByRole('heading',{name:'Become a member'})).toBeVisible();
+ await expect(page.getByText(/Online registration is not currently open/)).toBeVisible();
+ const response=await request.post('/api/members',{data:{fullName:'Example Member'}});
+ expect(response.status()).toBe(503);
+});
+
+test('private administrator login accepts no assumed credentials',async({page})=>{
+ await page.setViewportSize({width:375,height:812});
+ await page.goto('/admin/login');
+ await expect(page.getByRole('heading',{name:'Admin sign in'})).toBeVisible();
+ await expect(page.getByLabel('Username')).toBeVisible();
+ await expect(page.getByLabel('Password',{exact:true})).toHaveAttribute('type','password');
+ await page.getByRole('button',{name:'Show password'}).click();
+ await expect(page.getByLabel('Password',{exact:true})).toHaveAttribute('type','text');
+ await page.goto('/admin/members');
+ await expect(page).toHaveURL(/\/admin\/login$/);
 });

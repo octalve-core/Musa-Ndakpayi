@@ -1,6 +1,8 @@
 'use client';
 import {useEffect,useState} from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import {media} from '@/lib/media';
 import {ArrowRight,ChevronLeft,ChevronRight,Pause,Play} from 'lucide-react';
 import {Container} from '@/components/ui/container';
 
@@ -21,7 +23,7 @@ export function HeroCarousel(){
  },[playing,interacting]);
  const slide=slides[active];
  return <section aria-label="Campaign introduction" aria-roledescription="carousel" onMouseEnter={()=>setInteracting(true)} onMouseLeave={()=>setInteracting(false)} onFocusCapture={()=>setInteracting(true)} onBlurCapture={event=>{if(!event.currentTarget.contains(event.relatedTarget as Node|null))setInteracting(false);}} className="relative isolate flex min-h-[670px] items-center overflow-hidden bg-[#073f86] text-white sm:min-h-[720px] lg:min-h-[min(820px,calc(100svh-80px))]">
-  <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage:'url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Minna%2C_Niger_state_City_gate.jpg/960px-Minna%2C_Niger_state_City_gate.jpg)'}}/>
+  {media.hero[active]?<Image src={media.hero[active]!} alt="" fill priority={active===0} sizes="100vw" className="object-cover object-[65%_center]" aria-hidden="true"/>:<div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_35%,#1662a6_0%,transparent_55%),linear-gradient(115deg,#021b3e,#073f86)]"/>}
   <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,29,64,.96)_0%,rgba(3,45,91,.9)_49%,rgba(3,42,86,.66)_100%)]"/>
   <div aria-hidden="true" className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#ffb71b] via-[#18a65b] to-[#073f86]"/>
   <Container className="relative z-10 flex items-center pb-36 pt-24 sm:pb-40 sm:pt-28">
@@ -47,6 +49,5 @@ export function HeroCarousel(){
     </div>
    </Container>
   </div>
-  <a href="https://commons.wikimedia.org/wiki/File:Minna,_Niger_state_City_gate.jpg" target="_blank" rel="noopener noreferrer" className="absolute bottom-24 right-12 z-20 hidden text-xs text-white/80 underline decoration-white/50 underline-offset-4 hover:text-white lg:block">Minna City Gate · F5pillar · CC BY-SA 4.0</a>
  </section>;
 }
