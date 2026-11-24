@@ -10,11 +10,11 @@ test('public pages are implemented and never lead to a missing route',()=>{
   assert.ok(existsSync(resolve(root,'app',page+'.tsx')),page+' missing');
  }
 });
-test('the seven priorities have distinct slugs and legislative pathways',()=>{
+test('the nine priorities have distinct slugs and legislative pathways',()=>{
  const source=content('lib/content.ts');
  const matches=[...source.matchAll(/slug:'([^']+)'/g)].map(x=>x[1]);
- assert.equal(matches.length,7);
- assert.equal(new Set(matches).size,7);
+ assert.equal(matches.length,9);
+ assert.equal(new Set(matches).size,9);
  assert.match(source,/mechanisms:/);
 });
 test('the site never claims unverifiable campaign metrics or provides an unimplemented form',()=>{
@@ -146,4 +146,16 @@ test('private admin pages and one-time seed never contain a default password',()
  assert.match(sessions,/campaign_sessions/);
  assert.match(sessions,/SESSION_AGE/);
  assert.match(sessions,/httpOnly:true/);
+});
+
+test('clean water and inclusive belonging are separate manifesto priorities',()=>{
+ const source=content('lib/content.ts');
+ for(const phrase of ["slug:'water-access'","slug:'unity-in-diversity'","title:'Reliable water & water security'","title:'Unity in diversity & inclusion'"])assert.ok(source.includes(phrase),'Missing '+phrase);
+ assert.match(source,/treatment capacity, pipeline repairs, pumping reliability/);
+ assert.match(source,/national integration, equal treatment/);
+ const platform=content('app/platforms/page.tsx');
+ const manifesto=content('app/manifesto/page.tsx');
+ assert.match(platform,/Nine priorities for Chanchaga/);
+ assert.match(manifesto,/Nine connected priorities/);
+ assert.doesNotMatch(platform,/Seven priorities/);
 });

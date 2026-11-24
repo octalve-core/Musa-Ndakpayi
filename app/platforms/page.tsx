@@ -7,9 +7,9 @@ import {SectionHeading} from '@/components/ui/section-heading';
 import {priorities} from '@/lib/content';
 export const metadata:Metadata={title:'Public Priorities'};
 export default function Platforms(){
- return <><PageHero title="Issues & priorities" label="Chanchaga in focus" description="Seven priorities for greater opportunity, stronger communities and effective representation in Chanchaga."/>
+ return <><PageHero title="Issues & priorities" label="Chanchaga in focus" description="Nine priorities for opportunity, reliable water, inclusive communities and effective representation across Chanchaga."/>
  <section className="py-16 sm:py-20"><Container>
-  <SectionHeading title="Seven priorities for Chanchaga" description="A focused agenda that connects everyday community needs with the tools of legislation, budget oversight and public representation."/>
+  <SectionHeading title="Nine priorities for Chanchaga" description="A focused agenda that connects everyday community needs with the tools of legislation, budget oversight and public representation."/>
   <div className="grid gap-6 md:grid-cols-2">
    {priorities.map(p=><article id={p.slug} key={p.slug} className="scroll-mt-28 rounded-xl border border-slate-200 border-t-[5px] bg-white p-6 shadow-sm sm:p-8" style={{borderTopColor:p.color}}>
     <div className="flex items-start justify-between gap-4"><span className="flex size-12 items-center justify-center rounded-lg" style={{background:p.color+'16',color:p.color}}><p.icon size={23}/></span><span className="text-sm font-medium text-slate-400">{p.number}</span></div>

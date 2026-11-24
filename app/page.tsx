@@ -16,7 +16,7 @@ export default function HomePage(){
  return <>
  <HeroCarousel/>
  <section className="relative z-10 -mt-5 pb-12 sm:-mt-7 sm:pb-16"><Container><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-  <ActionCard title="The legislative agenda" description="Discover seven priorities and practical legislative pathways for the constituency." icon={BookOpenText} href="/manifesto" accent="#ffb71b"/>
+  <ActionCard title="The legislative agenda" description="Discover nine priorities and practical legislative pathways for the constituency." icon={BookOpenText} href="/manifesto" accent="#ffb71b"/>
   <ActionCard title="Public statements" description="Follow the latest statements, media coverage and community updates." icon={UsersRound} href="/news" accent="#18a65b"/>
   <ActionCard title="Become a member" description="Join the campaign community through secure online registration." icon={UsersRound} href="/register" accent="#c92230"/>
  </div></Container></section>
@@ -25,13 +25,13 @@ export default function HomePage(){
    <h2 className="max-w-xl text-3xl font-semibold leading-tight tracking-[-.045em] text-slate-900 sm:text-4xl">Meet Musa Usman Ndakpayi.</h2>
    <p className="mt-6 text-base leading-8 text-slate-600">Musa Usman Ndakpayi is the Nigeria Democratic Congress candidate for Chanchaga Federal Constituency in the 2027 House of Representatives election. His journey brings together education, practical management and service to communities.</p>
    <p className="mt-4 text-base leading-8 text-slate-600">A Political Science graduate of the University of Abuja, he brings experience in construction-site management, team coordination and enterprise initiatives that support students, graduates and disadvantaged people.</p>
-   <p className="mt-4 text-base leading-8 text-slate-600">He places particular importance on youth participation, economic opportunity, education, access to healthcare and public accountability.</p>
+   <p className="mt-4 text-base leading-8 text-slate-600">He places particular importance on youth participation, economic opportunity, education, healthcare, reliable water supply, unity across communities and public accountability.</p>
    <Link href="/about" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#073f86]">Read his public profile <ArrowRight size={18}/></Link>
   </div>
   <CandidatePhoto className="min-h-[410px] sm:min-h-[500px]"/>
  </div></Container></section>
  <section className="bg-[#f5f6f7] py-20 sm:py-24"><Container>
-  <SectionHeading eyebrow="The work ahead" title="Issues that deserve practical answers." description="Seven interconnected priorities centred on better opportunities, stronger services and more accountable representation for the people of Chanchaga." action={<ButtonLink href="/platforms" variant="outline" showArrow>All priorities</ButtonLink>}/>
+  <SectionHeading eyebrow="The work ahead" title="Issues that deserve practical answers." description="Nine connected priorities for stronger public services, reliable water, community inclusion and accountable representation in Chanchaga." action={<ButtonLink href="/platforms" variant="outline" showArrow>All priorities</ButtonLink>}/>
   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
    {priorities.slice(0,3).map(p=><PolicyCard key={p.slug} title={p.title} summary={p.summary} number={p.number} icon={p.icon} color={p.color} href={'/platforms#'+p.slug}/>)}
   </div>

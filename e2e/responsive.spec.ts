@@ -128,3 +128,16 @@ test('private administrator login accepts no assumed credentials',async({page})=
  await page.goto('/admin/members');
  await expect(page).toHaveURL(/\/admin\/login$/);
 });
+
+test('nine manifesto priorities include deep links for water and community inclusion',async({page})=>{
+ await page.goto('/platforms');
+ await expect(page.getByRole('heading',{name:'Nine priorities for Chanchaga'})).toBeVisible();
+ await expect(page.getByRole('heading',{name:'Reliable water & water security'})).toBeVisible();
+ await expect(page.getByRole('heading',{name:'Unity in diversity & inclusion'})).toBeVisible();
+ await page.goto('/manifesto#water-access');
+ await expect(page.getByRole('tab',{name:/Reliable water & water security/})).toHaveAttribute('aria-selected','true');
+ await expect(page.getByRole('tabpanel')).toContainText('treatment capacity, pipeline repairs');
+ await page.goto('/manifesto#unity-in-diversity');
+ await expect(page.getByRole('tab',{name:/Unity in diversity & inclusion/})).toHaveAttribute('aria-selected','true');
+ await expect(page.getByRole('tabpanel')).toContainText('national integration, equal treatment');
+});
