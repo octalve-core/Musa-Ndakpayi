@@ -1,6 +1,6 @@
 'use client';
 import {useEffect,useState} from 'react';
-import {ArrowUpRight,CalendarDays} from 'lucide-react';
+import {CalendarDays} from 'lucide-react';
 import {Container} from '@/components/ui/container';
 
 // INEC: Presidential and National Assembly elections, 16 January 2027.
@@ -50,7 +50,6 @@ export function ElectionCountdownStrip(){
      </span>)}
     </>}
    </div>
-   <a href="https://inecnigeria.org/elections/calendar" target="_blank" rel="noopener noreferrer" className="hidden shrink-0 items-center gap-1 text-[11px] font-medium text-slate-200 underline decoration-white/40 underline-offset-4 hover:text-white lg:inline-flex">Source: INEC <ArrowUpRight size={12} aria-hidden="true"/></a>
   </Container>
  </div>;
 }
