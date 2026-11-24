@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import media from '@/data/media.generated.json';
+import {media} from '@/lib/media';
 
 export function CandidatePhoto({className=''}:{className?:string}){
  return <figure className={['relative isolate flex min-h-[400px] flex-col justify-end overflow-hidden rounded-2xl bg-[#082d60] text-white',className].join(' ')}>

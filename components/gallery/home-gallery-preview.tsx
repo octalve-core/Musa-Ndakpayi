@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {Camera,ArrowUpRight} from 'lucide-react';
-import media from '@/data/media.generated.json';
+import {media} from '@/lib/media';
 export function HomeGalleryPreview(){
  const album=media.albums[0];
  return <Link href="/gallery" className="group relative flex min-h-[360px] overflow-hidden rounded-2xl bg-[#073f86] sm:min-h-[440px]" aria-label="Explore the campaign gallery">

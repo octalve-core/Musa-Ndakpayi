@@ -5,7 +5,7 @@ import {ArrowLeft,Images} from 'lucide-react';
 import {Container} from '@/components/ui/container';
 import {PageHero} from '@/components/ui/page-hero';
 import {PhotoLightbox} from '@/components/gallery/photo-lightbox';
-import media from '@/data/media.generated.json';
+import {media} from '@/lib/media';
 
 type Props={params:Promise<{slug:string}>};
 export const dynamicParams=false;

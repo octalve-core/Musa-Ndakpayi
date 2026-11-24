@@ -1,5 +1,4 @@
 import type {Metadata} from 'next';
-import Link from 'next/link';
 import {ShieldCheck,MapPin,Mail} from 'lucide-react';
 import {PageHero} from '@/components/ui/page-hero';
 import {Container} from '@/components/ui/container';

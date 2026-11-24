@@ -2,7 +2,7 @@
 import {useEffect,useState} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import media from '@/data/media.generated.json';
+import {media} from '@/lib/media';
 import {ArrowRight,ChevronLeft,ChevronRight,Pause,Play} from 'lucide-react';
 import {Container} from '@/components/ui/container';
 

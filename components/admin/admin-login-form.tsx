@@ -1,7 +1,9 @@
 'use client';
 import {useState} from 'react';
+import {useRouter} from 'next/navigation';
 import {Eye,EyeOff,LogIn} from 'lucide-react';
 export function AdminLoginForm(){
+ const router=useRouter();
  const [username,setUsername]=useState('');
  const [password,setPassword]=useState('');
  const [show,setShow]=useState(false);
@@ -12,7 +14,7 @@ export function AdminLoginForm(){
   try{
    const response=await fetch('/api/admin/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username,password}),cache:'no-store'});
    const result=await response.json() as {message?:string;redirect?:string};
-   if(response.ok&&result.redirect){window.location.assign(result.redirect);return;}
+   if(response.ok&&result.redirect){router.replace(result.redirect);return;}
    setError(result.message||'Unable to sign in.');
   }catch{setError('Unable to connect. Please try again.');}
   finally{setBusy(false);}

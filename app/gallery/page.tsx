@@ -3,7 +3,7 @@ import {Camera} from 'lucide-react';
 import {PageHero} from '@/components/ui/page-hero';
 import {Container} from '@/components/ui/container';
 import {AlbumCard} from '@/components/gallery/album-card';
-import media from '@/data/media.generated.json';
+import {media} from '@/lib/media';
 
 export const metadata:Metadata={title:'Gallery',description:'Browse Musa Usman Ndakpayi campaign photographs, organised by community activities and events.'};
 export default function Gallery(){

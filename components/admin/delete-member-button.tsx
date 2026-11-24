@@ -1,7 +1,9 @@
 'use client';
 import {useState} from 'react';
+import {useRouter} from 'next/navigation';
 import {Trash2} from 'lucide-react';
 export function DeleteMemberButton({reference,csrf}:{reference:string;csrf:string}){
+ const router=useRouter();
  const [busy,setBusy]=useState(false),[error,setError]=useState('');
  async function remove(){
   if(busy||!window.confirm('Permanently delete this member record? This action cannot be undone.'))return;
@@ -9,7 +11,7 @@ export function DeleteMemberButton({reference,csrf}:{reference:string;csrf:strin
   try{
    const response=await fetch('/api/admin/members/'+reference,{method:'DELETE',headers:{'Content-Type':'application/json','x-admin-csrf':csrf},cache:'no-store'});
    const result=await response.json() as {message?:string};
-   if(response.ok){window.location.assign('/admin/members');return;}
+   if(response.ok){router.replace('/admin/members');return;}
    setError(result.message||'Could not delete this member.');
   }catch{setError('Unable to connect. Please try again.');}
   finally{setBusy(false);}

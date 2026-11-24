@@ -1,14 +1,16 @@
 'use client';
 import {useState} from 'react';
+import {useRouter} from 'next/navigation';
 import {Eye,EyeOff,ShieldCheck} from 'lucide-react';
 export function ChangePasswordForm({csrf}:{csrf:string}){
+ const router=useRouter();
  const [current,setCurrent]=useState(''),[next,setNext]=useState(''),[show,setShow]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState('');
  async function submit(event:React.FormEvent<HTMLFormElement>){
   event.preventDefault();if(busy)return;setBusy(true);setError('');
   try{
    const response=await fetch('/api/admin/change-password',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({currentPassword:current,newPassword:next,csrf}),cache:'no-store'});
    const result=await response.json() as {message?:string;redirect?:string};
-   if(response.ok&&result.redirect){window.location.assign(result.redirect);return;}
+   if(response.ok&&result.redirect){router.replace(result.redirect);return;}
    setError(result.message||'Password change failed.');
   }catch{setError('Unable to connect. Try again.');}
   finally{setBusy(false);}
