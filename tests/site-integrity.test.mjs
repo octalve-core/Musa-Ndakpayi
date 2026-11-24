@@ -227,6 +227,7 @@ test('global header counts down to INEC House of Representatives election on 16 
  assert.match(source,/Math\.floor\(seconds\/86400\)/);
  assert.match(source,/role="timer"/);
  assert.match(source,/time dateTime="2027-01-16"/);
- assert.doesNotMatch(source,/Source: INEC|inecnigeria\\.org\\/elections\\/calendar/);
+ assert.ok(!source.includes('Source: INEC'));
+ assert.ok(!source.includes('https://inecnigeria.org/elections/calendar'));
  assert.match(source,/sm:hidden/);
 });
