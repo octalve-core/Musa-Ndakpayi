@@ -45,7 +45,7 @@ export function MemberForm({siteKey}:{siteKey:string}){
    turnstileToken:token
   };
   if(!body.membershipConsent||!body.adultConsent){setError('Please read and accept the membership and age confirmations.');return;}
-  if(!token){setError('Please complete the security check.');return;}
+  if(siteKey&&!token){setError('Please complete the security check.');return;}
   setBusy(true);setError('');
   try{
    const response=await fetch('/api/members',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),cache:'no-store'});
@@ -63,7 +63,7 @@ export function MemberForm({siteKey}:{siteKey:string}){
   <Link href="/" className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-md bg-[#073f86] px-6 py-3 text-sm font-medium text-white">Return home <ArrowRight size={17}/></Link>
  </div>;
  return <>
-  <Script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" strategy="afterInteractive" onLoad={mount}/>
+  {siteKey&&<Script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" strategy="afterInteractive" onLoad={mount}/>}
   <form onSubmit={submit} className="space-y-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-9">
    <div><p className="text-xs font-semibold uppercase tracking-[.15em] text-[#0a5d9c]">Chanchaga · Niger State</p><h2 className="mt-2 text-2xl font-semibold text-slate-900">Member registration</h2><p className="mt-2 text-sm leading-7 text-slate-600">Please enter your correct details and select your electoral ward and polling unit.</p></div>
    <div className="grid gap-5 sm:grid-cols-2">
@@ -82,14 +82,14 @@ export function MemberForm({siteKey}:{siteKey:string}){
    </fieldset>
    <fieldset className="space-y-4 border-t border-slate-200 pt-5"><legend className="text-sm font-semibold text-slate-900">Membership and privacy</legend>
     <label className="flex items-start gap-3 text-sm leading-6 text-slate-700"><input required type="checkbox" name="adultConsent" className="mt-1 shrink-0"/>I confirm I am at least 18 years old.</label>
-    <label className="flex items-start gap-3 text-sm leading-6 text-slate-700"><input required type="checkbox" name="membershipConsent" className="mt-1 shrink-0"/>I voluntarily register as a member of the Musa Usman Ndakpayi campaign and consent to the secure processing of my name, phone number, ward, polling unit and campaign affiliation for membership management.</label>
+    <label className="flex items-start gap-3 text-sm leading-6 text-slate-700"><input required type="checkbox" name="membershipConsent" className="mt-1 shrink-0"/>I voluntarily register as a member of the Musa Usman Ndakpayi campaign and consent to the processing of my name, phone number, ward, polling unit and campaign affiliation for membership management, including secure hosting in Germany. I have read the privacy notice and understand that my information will be processed outside Nigeria.</label>
     <label className="flex items-start gap-3 text-sm leading-6 text-slate-700"><input type="checkbox" name="communicationConsent" className="mt-1 shrink-0"/>I also wish to receive campaign announcements by phone or message. (Optional)</label>
     <p className="text-xs leading-6 text-slate-500">Read the <Link className="font-medium text-[#073f86] underline" href="/privacy">privacy notice</Link>. This registration is for campaign membership only, not INEC voter registration.</p>
    </fieldset>
    <div className="hidden" aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off"/></label></div>
-   <div ref={widget} className="min-h-[68px]" aria-label="Security verification"/>
+   {siteKey&&<div ref={widget} className="min-h-[68px]" aria-label="Security verification"/>}
    {error&&<p role="alert" className="rounded-lg bg-red-50 p-4 text-sm text-red-800">{error}</p>}
-   <button type="submit" disabled={busy||!token} className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-[#073f86] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#052e65] disabled:cursor-not-allowed disabled:opacity-50">{busy?'Submitting securely…':'Complete registration'} <ArrowRight size={18}/></button>
+   <button type="submit" disabled={busy||(Boolean(siteKey)&&!token)} className="inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md bg-[#073f86] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#052e65] disabled:cursor-not-allowed disabled:opacity-50">{busy?'Submitting securely…':'Complete registration'} <ArrowRight size={18}/></button>
    <p className="flex items-start gap-2 text-xs leading-6 text-slate-500"><ShieldCheck className="mt-0.5 shrink-0 text-[#19834e]" size={17}/>Your information is submitted securely and is not published on the website.</p>
   </form>
  </>;

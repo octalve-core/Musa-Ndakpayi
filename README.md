@@ -41,8 +41,8 @@ Read docs/MEMBERSHIP-SETUP.md completely before starting registration. The membe
 .env.example lists the required key NAMES and safe flags; never commit real values. MEMBER registration remains CLOSED until:
 - A dedicated Neon database, schema and seeded active admin are verified.
 - The correct Vercel project contains its encrypted DATABASE_URL.
-- Cloudflare Turnstile, host allowlist, admin CSRF and registration-hash keys are configured.
-- The controller/privacy settings, retention days and scheduled cleanup secret are configured.
+- Admin CSRF and registration-hash keys are configured; Cloudflare Turnstile is optional and enabled later only when TURNSTILE_ENABLED=true and its site key, secret and host allowlist are present.
+- The controller/privacy contact settings, 365-day retention and scheduled cleanup secret are configured. Political membership is sensitive personal data, and international storage requires adequate safeguards and transparent consent.
 - End-to-end registration, administration and deletion have been tested.
 
 The current GitHub integration does not on its own prove that these live services are configured.

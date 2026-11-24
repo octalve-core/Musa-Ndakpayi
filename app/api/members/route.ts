@@ -1,7 +1,7 @@
 import {NextRequest,NextResponse} from 'next/server';
 import {getSql,databaseReady} from '@/lib/db';
 import {verifyUnit} from '@/lib/electoral';
-import {registrationReady,memberSchema,CONSENT_VERSION} from '@/lib/member-registration';
+import {registrationReady,turnstileEnabled,memberSchema,CONSENT_VERSION} from '@/lib/member-registration';
 import {sameOrigin,noStoreHeaders,hashVisitor,requestIp,verifyTurnstile} from '@/lib/request-security';
 
 export const runtime='nodejs';
@@ -20,7 +20,7 @@ export async function POST(req:NextRequest){
  const location=verifyUnit(d.wardCode,d.puCode);
  if(!location)return respond('Please select a polling unit under your chosen Chanchaga ward.',400);
  const ip=requestIp(req);
- if(!await verifyTurnstile(d.turnstileToken,ip))return respond('Security verification was unsuccessful. Please try again.',400);
+ if(turnstileEnabled()&&!await verifyTurnstile(d.turnstileToken,ip))return respond('Security verification was unsuccessful. Please try again.',400);
  try{
   const sql=getSql();
   const visitor=hashVisitor('ip|'+ip);
@@ -32,6 +32,11 @@ export async function POST(req:NextRequest){
   const phone=d.phone.startsWith('0')?'+234'+d.phone.slice(1):d.phone;
   const fingerprint=hashVisitor('member|'+normalizedName.toLowerCase()+'|'+phone+'|'+d.puCode);
   const phoneHash=hashVisitor('phone|'+phone);
+  // Independent per-phone throttle limits repeated submissions when Turnstile is optional.
+  const phoneRate=await sql.query(
+   "INSERT INTO campaign_rate_limits(kind,visitor_hash,window_start,attempts) VALUES('PHONE',$1,date_trunc('day',now()),1) ON CONFLICT(kind,visitor_hash,window_start) DO UPDATE SET attempts=campaign_rate_limits.attempts+1 RETURNING attempts",
+   [phoneHash]);
+  if(Number(phoneRate[0]?.attempts||0)>3)return respond('Too many submissions for this phone number. Please try again tomorrow.',429);
   const found=await sql.query(
     "SELECT EXISTS(SELECT 1 FROM campaign_members WHERE fingerprint=$1 AND created_at>now()-interval '90 days') AS found",[fingerprint]);
   const rows=await sql.query(

@@ -159,3 +159,28 @@ test('clean water and inclusive belonging are separate manifesto priorities',()=
  assert.match(manifesto,/Nine connected priorities/);
  assert.doesNotMatch(platform,/Seven priorities/);
 });
+
+test('optional Turnstile never skips backend consent, field validation, spam protection and rate controls',()=>{
+ const gate=content('lib/member-registration.ts');
+ const form=content('components/members/member-form.tsx');
+ const route=content('app/api/members/route.ts');
+ const privacy=content('app/privacy/page.tsx');
+ assert.match(gate,/TURNSTILE_ENABLED/);
+ assert.match(gate,/!turnstileEnabled\(\)\|\|Boolean/);
+ assert.match(gate,/turnstileToken:z\.string\(\)\.trim\(\)\.max\(2048\)\.default\(''\)/);
+ assert.match(form,/siteKey&&<Script/);
+ assert.match(form,/siteKey&&<div ref=\{widget\}/);
+ assert.match(form,/if\(siteKey&&!token\)/);
+ assert.match(route,/turnstileEnabled\(\)&&!await verifyTurnstile/);
+ assert.match(route,/sameOrigin/);
+ assert.match(route,/verifyUnit/);
+ assert.match(route,/phoneRate/);
+ assert.match(route,/kind,visitor_hash,window_start,attempts/);
+ assert.match(route,/\('PHONE'/);
+ assert.match(route,/if\(Number\(phoneRate\[0\]\?\.attempts\|\|0\)>3\)/);
+ assert.match(form,/name="adultConsent"/);
+ assert.match(form,/name="membershipConsent"/);
+ assert.match(form,/name="communicationConsent"/);
+ assert.match(privacy,/Frankfurt, Germany/);
+ assert.match(form,/including secure hosting in Germany/);
+});
