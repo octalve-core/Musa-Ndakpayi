@@ -1,0 +1,1592 @@
+{
+  "state": "Niger",
+  "lga": "Chanchaga",
+  "stateCode": "26",
+  "lgaCode": "06",
+  "source": "https://github.com/kcemenike/find-my-polling-unit/blob/main/inec_scraped/state_27_niger.json",
+  "sourceDescription": "INEC-derived 2023 polling-unit directory; reconfirm for subsequent electoral revisions",
+  "wards": [
+    {
+      "code": "01",
+      "name": "LIMAWA 'A'",
+      "units": [
+        {
+          "code": "26/06/01/001",
+          "name": "KOFAR TANKO GAJERE"
+        },
+        {
+          "code": "26/06/01/002",
+          "name": "FIRE SERVICE"
+        },
+        {
+          "code": "26/06/01/003",
+          "name": "W.T.C."
+        },
+        {
+          "code": "26/06/01/004",
+          "name": "KOFAR GARBA ZAGO"
+        },
+        {
+          "code": "26/06/01/005",
+          "name": "KOFAR UMAR BAYEREBE"
+        },
+        {
+          "code": "26/06/01/006",
+          "name": "KOFAR UMARU KURA I"
+        },
+        {
+          "code": "26/06/01/007",
+          "name": "KOFAR UMAR KURA II"
+        },
+        {
+          "code": "26/06/01/008",
+          "name": "KOFAR ALHAJI YABAGI"
+        },
+        {
+          "code": "26/06/01/009",
+          "name": "KASUWAN DARE"
+        },
+        {
+          "code": "26/06/01/010",
+          "name": "OFISHIN DAGACHI"
+        },
+        {
+          "code": "26/06/01/011",
+          "name": "KOFAR BADUNGURE"
+        },
+        {
+          "code": "26/06/01/012",
+          "name": "ASIBITIN KUTARE"
+        },
+        {
+          "code": "26/06/01/013",
+          "name": "KOFAR DANJUMA"
+        },
+        {
+          "code": "26/06/01/014",
+          "name": "AIR PORT QUARTERS"
+        },
+        {
+          "code": "26/06/01/015",
+          "name": "INTERMEDIATE QUARTERS"
+        },
+        {
+          "code": "26/06/01/016",
+          "name": "KOFAR ALHAJI YARO"
+        },
+        {
+          "code": "26/06/01/017",
+          "name": "KOFAR MAHMUDU KUNDU"
+        },
+        {
+          "code": "26/06/01/018",
+          "name": "ANGUWAN MAKAFI"
+        },
+        {
+          "code": "26/06/01/019",
+          "name": "FILIN CAR WASH"
+        },
+        {
+          "code": "26/06/01/020",
+          "name": "OPP NEW HORIZON"
+        },
+        {
+          "code": "26/06/01/021",
+          "name": "OPP CENTRAL MOSQUE LIMAWA(A)"
+        },
+        {
+          "code": "26/06/01/022",
+          "name": "BANU HASHIM SABON TITI"
+        },
+        {
+          "code": "26/06/01/023",
+          "name": "KATSINA ROAD JUNCTION, LIMAWA(A)"
+        },
+        {
+          "code": "26/06/01/024",
+          "name": "ANGUWAN MAKWALLA"
+        },
+        {
+          "code": "26/06/01/025",
+          "name": "FILIN JIDDA"
+        },
+        {
+          "code": "26/06/01/026",
+          "name": "SABON TITI LIMAWA(A)"
+        },
+        {
+          "code": "26/06/01/027",
+          "name": "ANGUWAN SHANU"
+        },
+        {
+          "code": "26/06/01/028",
+          "name": "FILIN KUTIRKO"
+        },
+        {
+          "code": "26/06/01/029",
+          "name": "GINDIN DURUMI BISI"
+        },
+        {
+          "code": "26/06/01/030",
+          "name": "GINDIN RIMI"
+        },
+        {
+          "code": "26/06/01/031",
+          "name": "DOWN QUARTERS"
+        },
+        {
+          "code": "26/06/01/032",
+          "name": "FOOT BALL FIELD"
+        },
+        {
+          "code": "26/06/01/033",
+          "name": "INTERMEDIATE QUARTERS II"
+        },
+        {
+          "code": "26/06/01/034",
+          "name": "LAYIN MAI ANGUWA"
+        }
+      ]
+    },
+    {
+      "code": "02",
+      "name": "LIMAWA 'B'",
+      "units": [
+        {
+          "code": "26/06/02/001",
+          "name": "ZARUMAI MODEL SCHOOL"
+        },
+        {
+          "code": "26/06/02/002",
+          "name": "TYPE 'B' QUARTERS(HOUSE NO.1)"
+        },
+        {
+          "code": "26/06/02/003",
+          "name": "DUTSEN KURA PRIMARY SCHOOL"
+        },
+        {
+          "code": "26/06/02/004",
+          "name": "DUTSEN KURA HAUSA I"
+        },
+        {
+          "code": "26/06/02/005",
+          "name": "DUTSEN KURA HAUSA II"
+        },
+        {
+          "code": "26/06/02/006",
+          "name": "SHANU AREA"
+        },
+        {
+          "code": "26/06/02/007",
+          "name": "GIDAN HASSAN"
+        },
+        {
+          "code": "26/06/02/008",
+          "name": "FADUKPE"
+        },
+        {
+          "code": "26/06/02/009",
+          "name": "DUTSEN KURA GWARI I"
+        },
+        {
+          "code": "26/06/02/010",
+          "name": "DUTSEN KURA GWARI II"
+        },
+        {
+          "code": "26/06/02/011",
+          "name": "ANGUNAN KWARKWATA"
+        },
+        {
+          "code": "26/06/02/012",
+          "name": "OLD TENNIS COURT"
+        },
+        {
+          "code": "26/06/02/013",
+          "name": "KOFAR ARAH"
+        },
+        {
+          "code": "26/06/02/014",
+          "name": "GOGGO MAI LALLI"
+        },
+        {
+          "code": "26/06/02/015",
+          "name": "KOFAR ABUBAKAR GIMBA"
+        },
+        {
+          "code": "26/06/02/016",
+          "name": "JOS STREET"
+        },
+        {
+          "code": "26/06/02/017",
+          "name": "WATER TANK"
+        },
+        {
+          "code": "26/06/02/018",
+          "name": "BAJAGO"
+        },
+        {
+          "code": "26/06/02/019",
+          "name": "OPPOSITE BILAL BIN - RABBA"
+        },
+        {
+          "code": "26/06/02/020",
+          "name": "KOFAR DANLADI"
+        },
+        {
+          "code": "26/06/02/021",
+          "name": "MALLAM MAITUMBI"
+        },
+        {
+          "code": "26/06/02/022",
+          "name": "KOFAR KAFINTA"
+        },
+        {
+          "code": "26/06/02/023",
+          "name": "KULOBGE"
+        },
+        {
+          "code": "26/06/02/024",
+          "name": "MAI ANGUWA DANLADI"
+        },
+        {
+          "code": "26/06/02/025",
+          "name": "KUTURKO"
+        },
+        {
+          "code": "26/06/02/026",
+          "name": "KOFAR MUSTAPHA"
+        },
+        {
+          "code": "26/06/02/027",
+          "name": "KOFAR MUSA USMAN"
+        },
+        {
+          "code": "26/06/02/028",
+          "name": "KOFAR ABODANE"
+        },
+        {
+          "code": "26/06/02/029",
+          "name": "ANGUWAN TURAKI"
+        },
+        {
+          "code": "26/06/02/030",
+          "name": "KWARKWATA MARKET"
+        },
+        {
+          "code": "26/06/02/031",
+          "name": "BOREHOLE"
+        }
+      ]
+    },
+    {
+      "code": "03",
+      "name": "MAKERA",
+      "units": [
+        {
+          "code": "26/06/03/001",
+          "name": "KOFAR DANKAWU"
+        },
+        {
+          "code": "26/06/03/002",
+          "name": "KOFAR BAWA MAIWANKI"
+        },
+        {
+          "code": "26/06/03/003",
+          "name": "ANWUARUDEEN MOSQUE"
+        },
+        {
+          "code": "26/06/03/004",
+          "name": "FILIN QUARTERS"
+        },
+        {
+          "code": "26/06/03/005",
+          "name": "HASSAN KUKURUKU"
+        },
+        {
+          "code": "26/06/03/006",
+          "name": "KOFAR MADAKI"
+        },
+        {
+          "code": "26/06/03/007",
+          "name": "IKON ALLAH MOTORS"
+        },
+        {
+          "code": "26/06/03/008",
+          "name": "WARD HEAD OFFICE"
+        },
+        {
+          "code": "26/06/03/009",
+          "name": "ANSARUDEEN MOSQUE"
+        },
+        {
+          "code": "26/06/03/010",
+          "name": "HOSPITAL GATE"
+        },
+        {
+          "code": "26/06/03/011",
+          "name": "RAILWAY POLICE BARRACKS"
+        },
+        {
+          "code": "26/06/03/012",
+          "name": "POLICE BARRACKS"
+        },
+        {
+          "code": "26/06/03/013",
+          "name": "UMARU ERANA ROAD JUNCTION"
+        },
+        {
+          "code": "26/06/03/014",
+          "name": "PIGERY JUNCTION"
+        },
+        {
+          "code": "26/06/03/015",
+          "name": "POLICE TRAINIG SCHOOL"
+        },
+        {
+          "code": "26/06/03/016",
+          "name": "OLD BATA SHOP (OPEN SPACE)"
+        },
+        {
+          "code": "26/06/03/017",
+          "name": "FILIN MUKEKE"
+        },
+        {
+          "code": "26/06/03/018",
+          "name": "KAWU RATA OPEN SPACE"
+        },
+        {
+          "code": "26/06/03/019",
+          "name": "FILIN TANIMU CHINDO"
+        },
+        {
+          "code": "26/06/03/020",
+          "name": "CENTRAL GUEST INN"
+        },
+        {
+          "code": "26/06/03/021",
+          "name": "FILIN WAKILI"
+        },
+        {
+          "code": "26/06/03/022",
+          "name": "GINDIN KUKA"
+        },
+        {
+          "code": "26/06/03/023",
+          "name": "MONI OPEN SPACE"
+        },
+        {
+          "code": "26/06/03/024",
+          "name": "WILLIAMS OPEN SPACE"
+        },
+        {
+          "code": "26/06/03/025",
+          "name": "POLICE CHILDREN SCHOOL OPEN SPACE"
+        },
+        {
+          "code": "26/06/03/026",
+          "name": "MOHAMMED SABA OPEN SPACE"
+        },
+        {
+          "code": "26/06/03/027",
+          "name": "ABUBAKAR IBRAHIM OPEN SPACE"
+        },
+        {
+          "code": "26/06/03/028",
+          "name": "MORRIS FERTILIZER GATE"
+        },
+        {
+          "code": "26/06/03/029",
+          "name": "BACK OF MORRIS FERTILIZER JUNCTION"
+        }
+      ]
+    },
+    {
+      "code": "04",
+      "name": "MINNA CENTRAL",
+      "units": [
+        {
+          "code": "26/06/04/001",
+          "name": "KASUWAN ZABARMA"
+        },
+        {
+          "code": "26/06/04/002",
+          "name": "GIDAN LIMAN GABAS"
+        },
+        {
+          "code": "26/06/04/003",
+          "name": "KOFAR YUSUF PAIKO"
+        },
+        {
+          "code": "26/06/04/004",
+          "name": "KOFAR BUSARI"
+        },
+        {
+          "code": "26/06/04/005",
+          "name": "KOFAR ALHAJI HARUNA"
+        },
+        {
+          "code": "26/06/04/006",
+          "name": "KOFAR TSWANYA"
+        },
+        {
+          "code": "26/06/04/007",
+          "name": "KUYAMBANA PRIMARY SCHOOL"
+        },
+        {
+          "code": "26/06/04/008",
+          "name": "OPPOSITE OGBARA PHARMACY"
+        },
+        {
+          "code": "26/06/04/009",
+          "name": "KOFAR SULE GARBA"
+        },
+        {
+          "code": "26/06/04/010",
+          "name": "KOFAR KWAKWARA"
+        },
+        {
+          "code": "26/06/04/011",
+          "name": "FOFAR TAUHID"
+        },
+        {
+          "code": "26/06/04/012",
+          "name": "MECHANIC WORKSHOP"
+        },
+        {
+          "code": "26/06/04/013",
+          "name": "ZAGURU BOOKSHOP"
+        },
+        {
+          "code": "26/06/04/014",
+          "name": "DR. FAROUK PRIMARY SCHOOL I"
+        },
+        {
+          "code": "26/06/04/015",
+          "name": "DR. FAROUK PRIMARY SCHOOL II"
+        },
+        {
+          "code": "26/06/04/016",
+          "name": "MASALACIN MAI FITILA"
+        },
+        {
+          "code": "26/06/04/017",
+          "name": "KOFAR ALH KADIRI"
+        },
+        {
+          "code": "26/06/04/018",
+          "name": "OPPOSITE ZAGBAYI PHARMACY"
+        },
+        {
+          "code": "26/06/04/019",
+          "name": "KOFAR ALH SULE KWANGILA"
+        },
+        {
+          "code": "26/06/04/020",
+          "name": "KOFAR ALH IBRAHIM MAI YADI"
+        },
+        {
+          "code": "26/06/04/021",
+          "name": "KOFAR NDEJI ZUBAIRU"
+        },
+        {
+          "code": "26/06/04/022",
+          "name": "BEHIND ALH MADU ENGINE"
+        },
+        {
+          "code": "26/06/04/023",
+          "name": "KOFAR MALLAM ABUBAKAR"
+        },
+        {
+          "code": "26/06/04/024",
+          "name": "KOFARWAKILI IBRAHIM"
+        },
+        {
+          "code": "26/06/04/025",
+          "name": "KOFAR LOKOGOMA"
+        },
+        {
+          "code": "26/06/04/026",
+          "name": "1,2,3 PRIMARY SCHOOL ODUOYE QUARTERS"
+        },
+        {
+          "code": "26/06/04/027",
+          "name": "MUTUNCI BLOCKS"
+        },
+        {
+          "code": "26/06/04/028",
+          "name": "ALAGBADO KOFAR DR SULE"
+        },
+        {
+          "code": "26/06/04/029",
+          "name": "YORUBA CHURCH"
+        }
+      ]
+    },
+    {
+      "code": "05",
+      "name": "MINNA SOUTH",
+      "units": [
+        {
+          "code": "26/06/05/001",
+          "name": "KUTIRKO /GBAGANU"
+        },
+        {
+          "code": "26/06/05/002",
+          "name": "NIKANGBE VILLAGE"
+        },
+        {
+          "code": "26/06/05/003",
+          "name": "KOFAR IBRAHIM SHABA"
+        },
+        {
+          "code": "26/06/05/004",
+          "name": "KOFAR BALA SULE"
+        },
+        {
+          "code": "26/06/05/005",
+          "name": "YAMAHA NIGHT CLUB"
+        },
+        {
+          "code": "26/06/05/006",
+          "name": "KOFAR MAI ANGUWAN SOJE"
+        },
+        {
+          "code": "26/06/05/007",
+          "name": "KOFAR D.P.O. SOJE"
+        },
+        {
+          "code": "26/06/05/008",
+          "name": "GINDIN MONGORO"
+        },
+        {
+          "code": "26/06/05/009",
+          "name": "KOFAR ISSAH GWAMNA"
+        },
+        {
+          "code": "26/06/05/010",
+          "name": "KOFAR LIMAN KUDU"
+        },
+        {
+          "code": "26/06/05/011",
+          "name": "KOFAR JOJI"
+        },
+        {
+          "code": "26/06/05/012",
+          "name": "NEAR DEEPER LIFE"
+        },
+        {
+          "code": "26/06/05/013",
+          "name": "KOFAR IBRAHIM SHABA 'N'"
+        },
+        {
+          "code": "26/06/05/014",
+          "name": "NEAR ST. MARY CHURCH"
+        },
+        {
+          "code": "26/06/05/015",
+          "name": "GINDIN DURIMI KOLOGBE"
+        },
+        {
+          "code": "26/06/05/016",
+          "name": "CHAKWA PRIMARY HEALTH CARE"
+        },
+        {
+          "code": "26/06/05/017",
+          "name": "GINDIN MANGORO GURARA"
+        },
+        {
+          "code": "26/06/05/018",
+          "name": "OVER HEAD TANK ALBISHIRI"
+        },
+        {
+          "code": "26/06/05/019",
+          "name": "FRONT OF JUSTICE FATI LAMI ABUBAKAR (OPEN SPACE)"
+        },
+        {
+          "code": "26/06/05/020",
+          "name": "OPPOSITE MAI KADA"
+        },
+        {
+          "code": "26/06/05/021",
+          "name": "KODONDO BACK OF LIMAWA PRIMARY SCHOOL"
+        },
+        {
+          "code": "26/06/05/022",
+          "name": "TOWN HALL KPAKUNGU"
+        },
+        {
+          "code": "26/06/05/023",
+          "name": "TSOHON TITI SOJE"
+        },
+        {
+          "code": "26/06/05/024",
+          "name": "SUPREME COMMUNITY"
+        },
+        {
+          "code": "26/06/05/025",
+          "name": "ANGUWAN YAN LAMBU"
+        },
+        {
+          "code": "26/06/05/026",
+          "name": "SOJE 'B' BEHIND DAN YABO FACTORY"
+        },
+        {
+          "code": "26/06/05/027",
+          "name": "AL MAJIRAI UNIT"
+        },
+        {
+          "code": "26/06/05/028",
+          "name": "GWA COMMUNITY"
+        },
+        {
+          "code": "26/06/05/029",
+          "name": "GURU COMMUNITY"
+        },
+        {
+          "code": "26/06/05/030",
+          "name": "CORPERS LODGE BARIKIN SALE"
+        },
+        {
+          "code": "26/06/05/031",
+          "name": "POLICE OUT POST BARIKIN SALE (OPEN SPACE)"
+        },
+        {
+          "code": "26/06/05/032",
+          "name": "CONTAINER JUNCTION"
+        },
+        {
+          "code": "26/06/05/033",
+          "name": "LIMTA AREA (OPEN SPACE)"
+        },
+        {
+          "code": "26/06/05/034",
+          "name": "ARMY GLOBAL BARIKIN SALE"
+        },
+        {
+          "code": "26/06/05/035",
+          "name": "SABON ANGUWAN (OPEN SPACE)"
+        },
+        {
+          "code": "26/06/05/036",
+          "name": "U-TURN BARIKIN SALE OPEN SPACE"
+        },
+        {
+          "code": "26/06/05/037",
+          "name": "MORRIS BEHIND DEEPER LIFE"
+        },
+        {
+          "code": "26/06/05/038",
+          "name": "VIGILANTE OFFICE UPPER BASEBARIKIN SALE (OPEN SPACE)"
+        },
+        {
+          "code": "26/06/05/039",
+          "name": "BESIDE MALLAM ADAMU MANTAFIEN (OPEN SPACE)"
+        },
+        {
+          "code": "26/06/05/040",
+          "name": "BEHIND ST. PETER KPAKUNGU OPEN SPACE"
+        },
+        {
+          "code": "26/06/05/041",
+          "name": "DARUS SALAM OPEN SPACE"
+        }
+      ]
+    },
+    {
+      "code": "06",
+      "name": "NASSARAWA 'A'",
+      "units": [
+        {
+          "code": "26/06/06/001",
+          "name": "KOFAR HAKIMI"
+        },
+        {
+          "code": "26/06/06/002",
+          "name": "KOFAR DABACHI"
+        },
+        {
+          "code": "26/06/06/003",
+          "name": "KOFAR ABDUL LASISI TELA"
+        },
+        {
+          "code": "26/06/06/004",
+          "name": "GUNI ROAD"
+        },
+        {
+          "code": "26/06/06/005",
+          "name": "KOFAR GARBA GWARI"
+        },
+        {
+          "code": "26/06/06/006",
+          "name": "KOFAR MAIKEKE"
+        },
+        {
+          "code": "26/06/06/007",
+          "name": "FILIN YANSANDA"
+        },
+        {
+          "code": "26/06/06/008",
+          "name": "KOFAR ALKALIN KUTA"
+        },
+        {
+          "code": "26/06/06/009",
+          "name": "KOFAR NDATSU"
+        },
+        {
+          "code": "26/06/06/010",
+          "name": "KOFAR NDAKO ISAH"
+        },
+        {
+          "code": "26/06/06/011",
+          "name": "ALH. GARBA MAI BABAA-ALJIHU"
+        },
+        {
+          "code": "26/06/06/012",
+          "name": "KOFAR ISAH MAKERI"
+        },
+        {
+          "code": "26/06/06/013",
+          "name": "MAKARANTA (NEAR EMIR'S PALACE)"
+        },
+        {
+          "code": "26/06/06/014",
+          "name": "KOFAR DALLATU"
+        },
+        {
+          "code": "26/06/06/015",
+          "name": "KOFAR WAZIRI"
+        },
+        {
+          "code": "26/06/06/016",
+          "name": "FILIN LAMINGO"
+        },
+        {
+          "code": "26/06/06/017",
+          "name": "PAIDA JUNCTION"
+        },
+        {
+          "code": "26/06/06/018",
+          "name": "KOFAR ALIYU KWAKWARA"
+        },
+        {
+          "code": "26/06/06/019",
+          "name": "S.P. 105 PAIDA JUNCTION"
+        },
+        {
+          "code": "26/06/06/020",
+          "name": "KOFAR YARO SABO"
+        },
+        {
+          "code": "26/06/06/021",
+          "name": "KOFAR ALLAH KARABO"
+        },
+        {
+          "code": "26/06/06/022",
+          "name": "KOFAR BABA IYA"
+        },
+        {
+          "code": "26/06/06/023",
+          "name": "KOFAR MB YUNUSA"
+        },
+        {
+          "code": "26/06/06/024",
+          "name": "KOFAR SARKIN SHANU"
+        },
+        {
+          "code": "26/06/06/025",
+          "name": "KOFAR MUSA ALLAWA"
+        },
+        {
+          "code": "26/06/06/026",
+          "name": "KOFAR ALHAJI MA'AJI"
+        },
+        {
+          "code": "26/06/06/027",
+          "name": "KOFAR BABA HANUNDAMA"
+        },
+        {
+          "code": "26/06/06/028",
+          "name": "KOFAR NAKAKA"
+        },
+        {
+          "code": "26/06/06/029",
+          "name": "KOFAR ALH RASHIDU"
+        },
+        {
+          "code": "26/06/06/030",
+          "name": "KOFAR GANI"
+        },
+        {
+          "code": "26/06/06/031",
+          "name": "EMIR'S PALACE"
+        },
+        {
+          "code": "26/06/06/032",
+          "name": "KOFAR MAAJI SULEJA"
+        },
+        {
+          "code": "26/06/06/033",
+          "name": "KOFAR SARKIN ZANGO"
+        },
+        {
+          "code": "26/06/06/034",
+          "name": "KOFAR HARUNA WANZAMI"
+        }
+      ]
+    },
+    {
+      "code": "07",
+      "name": "NASSARAWA 'B'",
+      "units": [
+        {
+          "code": "26/06/07/001",
+          "name": "KOFAR MADAKI AYAWA"
+        },
+        {
+          "code": "26/06/07/002",
+          "name": "KOFAR SARKIN PADA"
+        },
+        {
+          "code": "26/06/07/003",
+          "name": "KOFAR UMARU AUDI"
+        },
+        {
+          "code": "26/06/07/004",
+          "name": "KOFAR SALIHU MAIJAKI"
+        },
+        {
+          "code": "26/06/07/005",
+          "name": "KOFAR ALI KATSINA"
+        },
+        {
+          "code": "26/06/07/006",
+          "name": "KOFAR NDAMAN"
+        },
+        {
+          "code": "26/06/07/007",
+          "name": "KOFAR DOGON-MORO"
+        },
+        {
+          "code": "26/06/07/008",
+          "name": "VET. OFFICE"
+        },
+        {
+          "code": "26/06/07/009",
+          "name": "KOFAR TANKO KUTA I"
+        },
+        {
+          "code": "26/06/07/010",
+          "name": "KOFAR TANKO KUTA II"
+        },
+        {
+          "code": "26/06/07/011",
+          "name": "FILIN MAKANIKAI"
+        },
+        {
+          "code": "26/06/07/012",
+          "name": "FILIN WAKILI"
+        },
+        {
+          "code": "26/06/07/013",
+          "name": "KOFAR WAKILIN NUPAWA"
+        },
+        {
+          "code": "26/06/07/014",
+          "name": "NEAR JONAPAL SUPER MARKET"
+        },
+        {
+          "code": "26/06/07/015",
+          "name": "BERGER FOOT BRIDGE (PEDESTRAL)"
+        },
+        {
+          "code": "26/06/07/016",
+          "name": "USMAN TELLA OPEN SPACE"
+        },
+        {
+          "code": "26/06/07/017",
+          "name": "KASUWAN GWARI OPEN SPACE"
+        },
+        {
+          "code": "26/06/07/018",
+          "name": "OPEN SPACE BY MALLAM UBA RESIDENCE"
+        },
+        {
+          "code": "26/06/07/019",
+          "name": "FILLIN TAFIDA"
+        },
+        {
+          "code": "26/06/07/020",
+          "name": "OPEN SPACE BY HASSAN BRIGADE BARRACKS"
+        },
+        {
+          "code": "26/06/07/021",
+          "name": "OLD ORPHANAGE HOME GATE"
+        },
+        {
+          "code": "26/06/07/022",
+          "name": "ABAYI CLOSE JUNCTION"
+        },
+        {
+          "code": "26/06/07/023",
+          "name": "OPEN SPACE KORORO AREWA"
+        },
+        {
+          "code": "26/06/07/024",
+          "name": "AUTA BARDE PRY. HEALTH CENTER"
+        },
+        {
+          "code": "26/06/07/025",
+          "name": "ISAH LAKANI OPEN SPACE"
+        },
+        {
+          "code": "26/06/07/026",
+          "name": "CHINDO MAI' WANKI OPEN SPACE"
+        }
+      ]
+    },
+    {
+      "code": "08",
+      "name": "NASSARAWA 'C'",
+      "units": [
+        {
+          "code": "26/06/08/001",
+          "name": "KOFAR YAKUBU (DIREBAN SARKI)"
+        },
+        {
+          "code": "26/06/08/002",
+          "name": "KOFAR MALLAM MIKO"
+        },
+        {
+          "code": "26/06/08/003",
+          "name": "KOFAR ALHAJI SALAU (I)"
+        },
+        {
+          "code": "26/06/08/004",
+          "name": "KOFAR ALHAJI SALAU (II)"
+        },
+        {
+          "code": "26/06/08/005",
+          "name": "KOFAR KOROSO"
+        },
+        {
+          "code": "26/06/08/006",
+          "name": "CHIROMA PRIMARY SCHOOL"
+        },
+        {
+          "code": "26/06/08/007",
+          "name": "KOFAR WACHIKO"
+        },
+        {
+          "code": "26/06/08/008",
+          "name": "E.R.C"
+        },
+        {
+          "code": "26/06/08/009",
+          "name": "SIMBA GUEST INN"
+        },
+        {
+          "code": "26/06/08/010",
+          "name": "TAYI VILLAGE"
+        },
+        {
+          "code": "26/06/08/011",
+          "name": "KOFAR MAIANGUWA SABON NASSARAWA"
+        },
+        {
+          "code": "26/06/08/012",
+          "name": "KOFAR MALLAM SANI"
+        },
+        {
+          "code": "26/06/08/013",
+          "name": "KOFAR SHEHU BABA"
+        },
+        {
+          "code": "26/06/08/014",
+          "name": "KOFAR UBA GEMU"
+        },
+        {
+          "code": "26/06/08/015",
+          "name": "KOFAR ALASENI"
+        },
+        {
+          "code": "26/06/08/016",
+          "name": "KOFAR IDI SOJA"
+        },
+        {
+          "code": "26/06/08/017",
+          "name": "KOFAR AHMAD SABO"
+        },
+        {
+          "code": "26/06/08/018",
+          "name": "JIWO BLOCK INDUSTRY"
+        },
+        {
+          "code": "26/06/08/019",
+          "name": "KOFAR DAN BORNO"
+        },
+        {
+          "code": "26/06/08/020",
+          "name": "F-LAYOUT EXTENSION"
+        },
+        {
+          "code": "26/06/08/021",
+          "name": "ORPHANAGE HOME"
+        },
+        {
+          "code": "26/06/08/022",
+          "name": "WAKILIN MAI ANGUWAN YAMMA"
+        },
+        {
+          "code": "26/06/08/023",
+          "name": "KOFAR AUDU HANCI"
+        },
+        {
+          "code": "26/06/08/024",
+          "name": "KOFAR MAI ANGUWAN TAYI"
+        },
+        {
+          "code": "26/06/08/025",
+          "name": "DANLADI MAJIDADI"
+        },
+        {
+          "code": "26/06/08/026",
+          "name": "KOFAR MAMAN TAWA"
+        },
+        {
+          "code": "26/06/08/027",
+          "name": "KOFAR DANTANI"
+        }
+      ]
+    },
+    {
+      "code": "09",
+      "name": "SABON GARI",
+      "units": [
+        {
+          "code": "26/06/09/001",
+          "name": "GBEDNAYI"
+        },
+        {
+          "code": "26/06/09/002",
+          "name": "TUDUN NATSIRA"
+        },
+        {
+          "code": "26/06/09/003",
+          "name": "FILIN YAKUBU"
+        },
+        {
+          "code": "26/06/09/004",
+          "name": "KOFAR AUDU GWARI"
+        },
+        {
+          "code": "26/06/09/005",
+          "name": "SABON GAREJI"
+        },
+        {
+          "code": "26/06/09/006",
+          "name": "KOFAR BABA ABUJA"
+        },
+        {
+          "code": "26/06/09/007",
+          "name": "BAKINGADA UNGUWAN KAJE"
+        },
+        {
+          "code": "26/06/09/008",
+          "name": "KOFAR MAIANGUWA KAJE"
+        },
+        {
+          "code": "26/06/09/009",
+          "name": "HAUSA BAPTIST CHURCH"
+        },
+        {
+          "code": "26/06/09/010",
+          "name": "KOFAR ALHAJI ISYAKU"
+        },
+        {
+          "code": "26/06/09/011",
+          "name": "KUTA ROAD JUNCTION"
+        },
+        {
+          "code": "26/06/09/012",
+          "name": "TAIMAKO CLINIC"
+        },
+        {
+          "code": "26/06/09/013",
+          "name": "KOFAR BABA BUBU"
+        },
+        {
+          "code": "26/06/09/014",
+          "name": "GIDAN MARAFA"
+        },
+        {
+          "code": "26/06/09/015",
+          "name": "MARKET ROAD"
+        },
+        {
+          "code": "26/06/09/016",
+          "name": "WARD HEAD OFFICE"
+        },
+        {
+          "code": "26/06/09/017",
+          "name": "OPPOSITE GWARI MARKET"
+        },
+        {
+          "code": "26/06/09/018",
+          "name": "MINNA CENTRAL MOTOR PARK (ABDUL STREET)"
+        },
+        {
+          "code": "26/06/09/019",
+          "name": "KOFAR BABA MALLAM"
+        },
+        {
+          "code": "26/06/09/020",
+          "name": "UP-HILL WATER TANK"
+        },
+        {
+          "code": "26/06/09/021",
+          "name": "KOFAR ALHAJI TANKO BARAU"
+        },
+        {
+          "code": "26/06/09/022",
+          "name": "UNG. MAKERI"
+        },
+        {
+          "code": "26/06/09/023",
+          "name": "CORPERS LODGE"
+        },
+        {
+          "code": "26/06/09/024",
+          "name": "OPPOSITE ALAAFIA OLUWA BAPTIST CHURCH"
+        },
+        {
+          "code": "26/06/09/025",
+          "name": "GBAYIDNA SAWMILL"
+        },
+        {
+          "code": "26/06/09/026",
+          "name": "COOLCAT"
+        },
+        {
+          "code": "26/06/09/027",
+          "name": "HAYIN NUPAWA"
+        },
+        {
+          "code": "26/06/09/028",
+          "name": "KOFAR GIDAN MAI UNGUWA SAYAKO"
+        },
+        {
+          "code": "26/06/09/029",
+          "name": "BACK OF PUBLIC TOILET"
+        },
+        {
+          "code": "26/06/09/030",
+          "name": "KOFAR MAI GORO"
+        },
+        {
+          "code": "26/06/09/031",
+          "name": "BAKIN DOGO"
+        },
+        {
+          "code": "26/06/09/032",
+          "name": "MASU TUKUNYA KARAMIN GADA"
+        },
+        {
+          "code": "26/06/09/033",
+          "name": "GINDIN DALBEJIYA"
+        },
+        {
+          "code": "26/06/09/034",
+          "name": "ABDULLAHI YERIMAN KUTA STREET"
+        },
+        {
+          "code": "26/06/09/035",
+          "name": "GIDAN LAPAI"
+        },
+        {
+          "code": "26/06/09/036",
+          "name": "KOFAR ALHAJI ABU"
+        },
+        {
+          "code": "26/06/09/037",
+          "name": "KOFAR YUSUF PAIKO"
+        },
+        {
+          "code": "26/06/09/038",
+          "name": "BAKIN MASALACI PZ"
+        },
+        {
+          "code": "26/06/09/039",
+          "name": "ABDULSALAM CLINIC"
+        },
+        {
+          "code": "26/06/09/040",
+          "name": "MUAZU QUARTERS"
+        }
+      ]
+    },
+    {
+      "code": "10",
+      "name": "TUDUN WADA NORTH",
+      "units": [
+        {
+          "code": "26/06/10/001",
+          "name": "TUNGA MARKET I"
+        },
+        {
+          "code": "26/06/10/002",
+          "name": "TUNGA MARKET II"
+        },
+        {
+          "code": "26/06/10/003",
+          "name": "FUSKAR GABAS"
+        },
+        {
+          "code": "26/06/10/004",
+          "name": "FUSKAR AREWA"
+        },
+        {
+          "code": "26/06/10/005",
+          "name": "OLD AREA COURT"
+        },
+        {
+          "code": "26/06/10/006",
+          "name": "KOFAR KUCHAZHI"
+        },
+        {
+          "code": "26/06/10/007",
+          "name": "NEW EAST ROAD"
+        },
+        {
+          "code": "26/06/10/008",
+          "name": "LIBERTY NIGHT CLUB"
+        },
+        {
+          "code": "26/06/10/009",
+          "name": "ISLAMIYA SCHOOL"
+        },
+        {
+          "code": "26/06/10/010",
+          "name": "OPPOSITE CBN QUARTERS"
+        },
+        {
+          "code": "26/06/10/011",
+          "name": "COCA-COLA DEPOT"
+        },
+        {
+          "code": "26/06/10/012",
+          "name": "KAMPANI"
+        },
+        {
+          "code": "26/06/10/013",
+          "name": "FUSKAR YAMMA"
+        },
+        {
+          "code": "26/06/10/014",
+          "name": "FILIN BALA YARO SABO"
+        },
+        {
+          "code": "26/06/10/015",
+          "name": "KOFAR NA'IBI"
+        },
+        {
+          "code": "26/06/10/016",
+          "name": "ALBRAKA 1"
+        },
+        {
+          "code": "26/06/10/017",
+          "name": "ALBRAKA II"
+        },
+        {
+          "code": "26/06/10/018",
+          "name": "KOFAR BABAN LARAI"
+        },
+        {
+          "code": "26/06/10/019",
+          "name": "KOFAR BABA IDI"
+        },
+        {
+          "code": "26/06/10/020",
+          "name": "TOP MEDICAL JUNCTION"
+        },
+        {
+          "code": "26/06/10/021",
+          "name": "FILIN ALHAJI BADEGGI"
+        },
+        {
+          "code": "26/06/10/022",
+          "name": "KOFAR ALI MADAWA"
+        },
+        {
+          "code": "26/06/10/023",
+          "name": "OPEN SPACE KAFIN TELLA 'B' BY TRANSFORMER"
+        },
+        {
+          "code": "26/06/10/024",
+          "name": "ALHAJI DANJUMA AGAIE OPEN SPACE"
+        },
+        {
+          "code": "26/06/10/025",
+          "name": "KOFAR MALAM MADU"
+        },
+        {
+          "code": "26/06/10/026",
+          "name": "SULEIMAN BACITA"
+        },
+        {
+          "code": "26/06/10/027",
+          "name": "KOFAR CHIROMA"
+        },
+        {
+          "code": "26/06/10/028",
+          "name": "KOFAR MA'AJI"
+        },
+        {
+          "code": "26/06/10/029",
+          "name": "BESIDE UMCA"
+        },
+        {
+          "code": "26/06/10/030",
+          "name": "MASTER CLASS GUEST HOUSE"
+        },
+        {
+          "code": "26/06/10/031",
+          "name": "U.S KOKO"
+        },
+        {
+          "code": "26/06/10/032",
+          "name": "ABDULSALAM PARK"
+        },
+        {
+          "code": "26/06/10/033",
+          "name": "GALAXY UPHILL"
+        },
+        {
+          "code": "26/06/10/034",
+          "name": "BABA SAIDU WUSHISHI"
+        },
+        {
+          "code": "26/06/10/035",
+          "name": "M.I WUSHISHI UBE PRY SCH."
+        },
+        {
+          "code": "26/06/10/036",
+          "name": "MANGORO MALLAM SANI"
+        },
+        {
+          "code": "26/06/10/037",
+          "name": "BO'OVIN QUARTERS OPEN SPACE"
+        },
+        {
+          "code": "26/06/10/038",
+          "name": "KOFAR DAUDU DIKO"
+        }
+      ]
+    },
+    {
+      "code": "11",
+      "name": "TUDUN WADA SOUTH",
+      "units": [
+        {
+          "code": "26/06/11/001",
+          "name": "KOFAR UBANDOMA"
+        },
+        {
+          "code": "26/06/11/002",
+          "name": "KWAKWARA DANDAURA"
+        },
+        {
+          "code": "26/06/11/003",
+          "name": "KOFAR YELWA I"
+        },
+        {
+          "code": "26/06/11/004",
+          "name": "UNION OFFICE"
+        },
+        {
+          "code": "26/06/11/005",
+          "name": "KASUWAN MAJE I"
+        },
+        {
+          "code": "26/06/11/006",
+          "name": "KOFAR JIBRIN GAWU"
+        },
+        {
+          "code": "26/06/11/007",
+          "name": "SABON ASIBITI"
+        },
+        {
+          "code": "26/06/11/008",
+          "name": "LOCAL GOVERNMENT GUEST HOUSE"
+        },
+        {
+          "code": "26/06/11/009",
+          "name": "OLD NIGERIA AIRWAYS"
+        },
+        {
+          "code": "26/06/11/010",
+          "name": "GIDAN KOLAWALE"
+        },
+        {
+          "code": "26/06/11/011",
+          "name": "MUSA UMARU CLOSE"
+        },
+        {
+          "code": "26/06/11/012",
+          "name": "TILAPIA RESTAURANT"
+        },
+        {
+          "code": "26/06/11/013",
+          "name": "UMARU AUDI MEMORIAL PRIMARY SCHOOL"
+        },
+        {
+          "code": "26/06/11/014",
+          "name": "HOUSE NO. 48 TUNGA LOW COST"
+        },
+        {
+          "code": "26/06/11/015",
+          "name": "HOUSE NO 148 TUNGA LOW-COST"
+        },
+        {
+          "code": "26/06/11/016",
+          "name": "KOFAR DOGON RUWA"
+        },
+        {
+          "code": "26/06/11/017",
+          "name": "GIDIN MANGORO"
+        },
+        {
+          "code": "26/06/11/018",
+          "name": "OPPOSITE SHIRORO HOTEL"
+        },
+        {
+          "code": "26/06/11/019",
+          "name": "GIDAN MAI ANGUWAN GWAGWAPI"
+        },
+        {
+          "code": "26/06/11/020",
+          "name": "KASUWAN MAJE (II)"
+        },
+        {
+          "code": "26/06/11/021",
+          "name": "KOFAR YELWA (II)"
+        },
+        {
+          "code": "26/06/11/022",
+          "name": "OPPOSITE GT BANK"
+        },
+        {
+          "code": "26/06/11/023",
+          "name": "BESIDE RAHAMANIYA MEDICINE STORE"
+        },
+        {
+          "code": "26/06/11/024",
+          "name": "KOFAR BABA SHABA"
+        },
+        {
+          "code": "26/06/11/025",
+          "name": "KOFAR BABA AGAIE"
+        },
+        {
+          "code": "26/06/11/026",
+          "name": "OPPOSITE OLD SAVANAH HOSPITAL"
+        },
+        {
+          "code": "26/06/11/027",
+          "name": "GIDAN BOYI"
+        },
+        {
+          "code": "26/06/11/028",
+          "name": "ADJACENT RASHEEDA RESTAURANT"
+        },
+        {
+          "code": "26/06/11/029",
+          "name": "BESIDE SOGGI GUEST INN"
+        },
+        {
+          "code": "26/06/11/030",
+          "name": "BACK OF DOGGIS HOUSE"
+        },
+        {
+          "code": "26/06/11/031",
+          "name": "NEAR FOUNTAIN HEIGHT SCHOOL"
+        },
+        {
+          "code": "26/06/11/032",
+          "name": "KOFAR MAMMAN KOLO"
+        },
+        {
+          "code": "26/06/11/033",
+          "name": "KOFAR AUDU BUNU"
+        },
+        {
+          "code": "26/06/11/034",
+          "name": "NEW TUNGA PRIMARY SCHOOL"
+        },
+        {
+          "code": "26/06/11/035",
+          "name": "BESIDE PEACHES BAKERY"
+        },
+        {
+          "code": "26/06/11/036",
+          "name": "PEACE CORPS OFFICE"
+        },
+        {
+          "code": "26/06/11/037",
+          "name": "FRONT OF FADAMA OFFICE"
+        },
+        {
+          "code": "26/06/11/038",
+          "name": "BAYAN GIDAN TYRE"
+        },
+        {
+          "code": "26/06/11/039",
+          "name": "KOFAR ALIYU ALKALI"
+        },
+        {
+          "code": "26/06/11/040",
+          "name": "GIDAN YAHAYA AGAIE"
+        },
+        {
+          "code": "26/06/11/041",
+          "name": "GIDAN WAKILI"
+        },
+        {
+          "code": "26/06/11/042",
+          "name": "GIDAN WAKILI KURE MARKET"
+        },
+        {
+          "code": "26/06/11/043",
+          "name": "BESIDE WATER BOARD TANK (HIMMA)"
+        },
+        {
+          "code": "26/06/11/044",
+          "name": "INFRONT OF NECO STAFF QUARTERS"
+        },
+        {
+          "code": "26/06/11/045",
+          "name": "KOFAR MALLAM ISA"
+        },
+        {
+          "code": "26/06/11/046",
+          "name": "KOFAR YUSUF DAKACI"
+        },
+        {
+          "code": "26/06/11/047",
+          "name": "MID EVENT JUNCTION"
+        },
+        {
+          "code": "26/06/11/048",
+          "name": "GIDAN MAI ANGWAN SAUKE"
+        },
+        {
+          "code": "26/06/11/049",
+          "name": "DAY SECONDARY SCHOOL GBANGBAPI"
+        },
+        {
+          "code": "26/06/11/050",
+          "name": "UNGUWAN NUPAWA"
+        }
+      ]
+    }
+  ]
+}
