@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import {ArrowRight,BookOpenText,UsersRound} from 'lucide-react';
 import {HeroCarousel} from '@/components/home/hero-carousel';
-import {ConstituencyPhoto} from '@/components/ui/constituency-photo';
+import {CandidatePhoto} from '@/components/ui/candidate-photo';
+import {HomeGalleryPreview} from '@/components/gallery/home-gallery-preview';
 import {AccountabilityBand} from '@/components/home/accountability-band';
 import {Container} from '@/components/ui/container';
 import {SectionHeading} from '@/components/ui/section-heading';
@@ -26,7 +27,7 @@ export default function HomePage(){
    <p className="mt-4 text-base leading-8 text-slate-600">He places particular importance on youth participation, economic opportunity, education, access to healthcare and public accountability.</p>
    <Link href="/about" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[#073f86]">Read his public profile <ArrowRight size={18}/></Link>
   </div>
-  <ConstituencyPhoto className="min-h-[410px] sm:min-h-[500px]"/>
+  <CandidatePhoto className="min-h-[410px] sm:min-h-[500px]"/>
  </div></Container></section>
  <section className="bg-[#f5f6f7] py-20 sm:py-24"><Container>
   <SectionHeading eyebrow="The work ahead" title="Issues that deserve practical answers." description="Seven interconnected priorities centred on better opportunities, stronger services and more accountable representation for the people of Chanchaga." action={<ButtonLink href="/platforms" variant="outline" showArrow>All priorities</ButtonLink>}/>
@@ -43,7 +44,7 @@ export default function HomePage(){
   <div><p className="text-xs font-semibold uppercase tracking-[.2em] text-[#d58b00]">Legislative priorities</p><h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">From local concerns to legislative action.</h2><p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600">The agenda outlines practical priorities for legislation, budget oversight, public accountability and cooperation with the institutions that deliver services to our communities.</p></div>
   <ButtonLink href="/manifesto" showArrow>Read the agenda</ButtonLink>
  </div></Container></section>
- <section className="py-16 sm:py-20"><Container><div className="grid items-center gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-12"><ConstituencyPhoto className="min-h-[360px] sm:min-h-[440px]"/><div><p className="text-xs font-semibold uppercase tracking-[.19em] text-[#0a5d9c]">Our constituency</p><h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">Chanchaga in pictures.</h2><p className="mt-5 text-sm leading-8 text-slate-600">Explore the places and stories that shape Chanchaga, beginning with Minna and its important landmarks.</p><ButtonLink href="/gallery" variant="outline" showArrow className="mt-7">View gallery</ButtonLink></div></div></Container></section>
+ <section className="py-16 sm:py-20"><Container><div className="grid items-center gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-12"><HomeGalleryPreview/><div><p className="text-xs font-semibold uppercase tracking-[.19em] text-[#0a5d9c]">Our constituency</p><h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">Chanchaga in pictures.</h2><p className="mt-5 text-sm leading-8 text-slate-600">Explore the places and stories that shape Chanchaga, beginning with Minna and its important landmarks.</p><ButtonLink href="/gallery" variant="outline" showArrow className="mt-7">View gallery</ButtonLink></div></div></Container></section>
  <section className="bg-[#073f86] py-20 text-white sm:py-24"><Container className="text-center"><p className="text-xs font-semibold uppercase tracking-[.2em] text-[#ffd05c]">Public participation</p><h2 className="mx-auto mt-4 max-w-3xl text-3xl font-semibold tracking-[-.04em] sm:text-4xl">Representation begins with listening.</h2><p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-blue-100">Explore the published issues, follow updates and learn more about opportunities for public dialogue across Chanchaga.</p><div className="mt-8 flex flex-wrap justify-center gap-3"><ButtonLink href="/events" variant="gold" showArrow>Events & dialogue</ButtonLink><ButtonLink href="/contact" variant="light">Contact information</ButtonLink></div></Container></section>
  </>;
 }

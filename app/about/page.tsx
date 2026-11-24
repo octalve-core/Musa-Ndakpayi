@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import Link from 'next/link';
 import {ArrowRight,ArrowUpRight,BookOpenText,GraduationCap,HeartHandshake} from 'lucide-react';
 import {PageHero} from '@/components/ui/page-hero';
-import {ConstituencyPhoto} from '@/components/ui/constituency-photo';
+import {CandidatePhoto} from '@/components/ui/candidate-photo';
 import {Container} from '@/components/ui/container';
 import {SectionHeading} from '@/components/ui/section-heading';
 import {PolicyCard} from '@/components/ui/policy-card';
@@ -37,7 +37,7 @@ export default function About(){
       <Link href="#education-and-experience" className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-[#073f86] hover:underline">Explore his background <ArrowRight size={16} aria-hidden="true"/></Link>
      </div>
     </div>
-    <ConstituencyPhoto className="min-h-[420px] sm:min-h-[520px]"/>
+    <CandidatePhoto className="min-h-[420px] sm:min-h-[520px]"/>
    </div>
   </Container></section>
 
