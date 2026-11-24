@@ -41,7 +41,7 @@ export async function POST(req:NextRequest){
     "SELECT EXISTS(SELECT 1 FROM campaign_members WHERE fingerprint=$1 AND created_at>now()-interval '90 days') AS found",[fingerprint]);
   const rows=await sql.query(
    "INSERT INTO campaign_members(full_name,phone,phone_hash,ward_code,ward_name,pu_code,pu_name,registration_method,assisted_by,communication_consent,consent_version,fingerprint,possible_duplicate) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13) RETURNING reference",
-   [normalizedName,phone,phoneHash,location.wardCode,location.ward,location.puCode,location.unit,d.method,d.method==='Assisted'?d.assistedBy:null,d.communicationConsent,CONSENT_VERSION,fingerprint,found[0]?.found===true]);
+   [normalizedName,phone,phoneHash,location.wardCode,location.ward,location.puCode,location.unit,d.method,d.method==='Assisted'?d.assistedBy:null,false,CONSENT_VERSION,fingerprint,found[0]?.found===true]);
   return NextResponse.json({message:'Your membership registration has been received.',reference:rows[0].reference},{status:201,headers:noStoreHeaders()});
  }catch{return respond('The registration could not be saved. Please try again.',503);}
 }

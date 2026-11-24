@@ -1,6 +1,6 @@
 import {z} from 'zod';
 import {directoryReady} from '@/lib/electoral';
-export const CONSENT_VERSION='2026-11-24-v2';
+export const CONSENT_VERSION='2026-11-24-v3';
 const phone=/^(?:\+234[789]\d{9}|0[789]\d{9})$/;
 export const memberSchema=z.object({
  fullName:z.string().trim().min(3).max(100),
@@ -12,7 +12,8 @@ export const memberSchema=z.object({
  assistedConsent:z.boolean().default(false),
  adultConsent:z.literal(true),
  membershipConsent:z.literal(true),
- communicationConsent:z.boolean().default(false),
+ // Consent to registration never implies consent to promotional messages.
+ communicationConsent:z.literal(false).default(false),
  website:z.string().max(0).default(''),
  turnstileToken:z.string().trim().max(2048).default('')
 }).superRefine((data,ctx)=>{

@@ -25,7 +25,7 @@
 ## Current scope
 - One public registration route `/register` (every registration is a MEMBER; no public approval queue or member accounts).
 - Eleven authentic Chanchaga wards, 379 polling unit options from an INEC-derived 2023 dataset. CSV/JSON source: `data/chanchaga-polling-units.json`. **Reconcile against INEC before the next election.**
-- Adults-only explicit campaign membership consent; optional contact consent (never preselected); assisted registration with explicit permission.
+- One required unchecked agreement references separate Terms & Conditions and Privacy Notice, confirming adult status and explicit voluntary campaign-membership consent; assisted registration additionally attests personal permission. No optional promotional contact opt-in is included in this streamlined form, so records always store communication_consent=false until a future independent opt-in flow exists.
 - Optional Cloudflare Turnstile (feature flag), independent per-IP/per-phone database throttles, origin/CSRF protection and honeypot; registration closed by default until switched on.
 - One dedicated Neon Postgres database, a seeded superadmin with salted scrypt password, first-login password change, revocable HttpOnly sessions, CSRF-guarded exports/deletion.
 - Dashboard: real counts, ward and polling-unit filters, date range, search, paginated detail pages, CSV export, member deletion and audit log.
@@ -67,7 +67,7 @@ Remove-Item Env:DATABASE_URL
 
 ## Security/privacy notes
 - This form is **NOT** INEC voter registration and does not modify the electoral register.
-- Visitors consent to processing that exposes their political membership, independently of optional campaign messages.
+- Visitors affirm their adult status and give explicit informed consent to processing their political membership via one required checkbox linked to /terms and /privacy. A required membership agreement must never be treated as permission for optional promotional messages.
 - Admin passwords are salted scrypt hashes; sessions are database-backed and expire after eight hours; admin export/delete actions have CSRF and origin checks.
 - Do not add public lists of names or polling-unit assignments.
 - The registration API fails closed if the Neon tables, seeded admin, secrets, privacy config, retention job secret or membership-open toggle are absent. If `TURNSTILE_ENABLED=true`, it also fails closed without a fully configured Turnstile.

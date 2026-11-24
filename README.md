@@ -13,7 +13,7 @@ The official candidate's public-facing campaign website for Chanchaga Federal Co
 - Automatic gallery albums: each subfolder under public/gallery becomes a named gallery; its card previews four representative photos, with equal-sized photo cards and an accessible original-aspect lightbox.
 - Existing candidate profile, public priorities, news and contact details.
 - Public member registration in Chanchaga only; 11 electoral wards, 379 actual ward-specific polling units. Server revalidates location relationships.
-- Optional assisted registration, voluntary adult consent to campaign affiliation, independently optional communication consent, anti-bot protection, rate limits and fail-closed submission.
+- One required, informed Terms & Conditions / Privacy Notice checkbox covers adult status and voluntary campaign membership; assisted registrations attest explicit permission. No promotional messaging consent is silently inferred. Anti-bot safeguards, rate limits and fail-closed submissions remain.
 - Seeded username/password admin (first sign-in requires password change), protected dashboard with actual counts, member search, ward/PU/date filters, CSV export, individual records and audited deletion. No Google OAuth.
 - Dedicated Neon Postgres schema; daily protected cleanup for privacy retention.
 

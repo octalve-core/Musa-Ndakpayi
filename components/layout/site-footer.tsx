@@ -22,7 +22,7 @@ export function SiteFooter(){
    </div>
    <div className="flex flex-col items-start justify-between gap-4 pt-7 text-xs leading-6 text-slate-400 sm:flex-row sm:items-center">
     <p>© {new Date().getFullYear()} Ndakpayi campaign information. All rights reserved.</p>
-    <div className="flex flex-wrap items-center gap-x-5 gap-y-2"><Link href="/privacy" className="hover:text-white">Privacy information</Link><a href="https://www.octalve.com" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-white">Developed by <span className="text-[#ffcc55]">Octalve Holding</span></a></div>
+    <div className="flex flex-wrap items-center gap-x-5 gap-y-2"><Link href="/privacy" className="hover:text-white">Privacy information</Link><Link href="/terms" className="hover:text-white">Terms &amp; Conditions</Link><a href="https://www.octalve.com" target="_blank" rel="noopener noreferrer" className="font-medium hover:text-white">Developed by <span className="text-[#ffcc55]">Octalve Holding</span></a></div>
    </div>
   </Container>
   <div aria-hidden="true" className="grid h-1.5 grid-cols-4"><span className="bg-[#073f86]"/><span className="bg-[#c92230]"/><span className="bg-[#18a65b]"/><span className="bg-[#ffb71b]"/></div>
