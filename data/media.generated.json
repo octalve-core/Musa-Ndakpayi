@@ -1,9 +1,459 @@
 {
   "hero": [
-    null,
-    null,
-    null
+    "/images/hero/slide-01.webp",
+    "/images/hero/slide-02.webp",
+    "/images/hero/slide-03.webp"
   ],
-  "candidate": null,
-  "albums": []
+  "candidate": "/images/candidate/candidate-portrait.webp",
+  "albums": [
+    {
+      "slug": "community-and-stakeholders-engagement",
+      "title": "Community and Stakeholders Engagement",
+      "count": 21,
+      "preview": [
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_021.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 21"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_010.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 10"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_016.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 16"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_005.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 5"
+        }
+      ],
+      "photos": [
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_001.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 1"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_002.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 2"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_003.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 3"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_004.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 4"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_005.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 5"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_006.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 6"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_007.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 7"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_008.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 8"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_009.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 9"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_010.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 10"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_011.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 11"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_012.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 12"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_013.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 13"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_014.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 14"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_015.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 15"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_016.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 16"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_017.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 17"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_018.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 18"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_019.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 19"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_020.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 20"
+        },
+        {
+          "src": "/gallery/Community%20and%20Stakeholders%20Engagement/IMG_021.jpg",
+          "alt": "Community and Stakeholders Engagement — photograph 21"
+        }
+      ]
+    },
+    {
+      "slug": "market-and-trade-fair",
+      "title": "Market and Trade Fair",
+      "count": 20,
+      "preview": [
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_013.jpg",
+          "alt": "Market and Trade Fair — photograph 13"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_002.jpg",
+          "alt": "Market and Trade Fair — photograph 2"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_010.jpg",
+          "alt": "Market and Trade Fair — photograph 10"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_018.jpg",
+          "alt": "Market and Trade Fair — photograph 18"
+        }
+      ],
+      "photos": [
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_001.jpg",
+          "alt": "Market and Trade Fair — photograph 1"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_002.jpg",
+          "alt": "Market and Trade Fair — photograph 2"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_003.jpg",
+          "alt": "Market and Trade Fair — photograph 3"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_004.jpg",
+          "alt": "Market and Trade Fair — photograph 4"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_005.jpg",
+          "alt": "Market and Trade Fair — photograph 5"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_006.jpg",
+          "alt": "Market and Trade Fair — photograph 6"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_007.jpg",
+          "alt": "Market and Trade Fair — photograph 7"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_008.jpg",
+          "alt": "Market and Trade Fair — photograph 8"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_009.jpg",
+          "alt": "Market and Trade Fair — photograph 9"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_010.jpg",
+          "alt": "Market and Trade Fair — photograph 10"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_011.jpg",
+          "alt": "Market and Trade Fair — photograph 11"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_012.jpg",
+          "alt": "Market and Trade Fair — photograph 12"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_013.jpg",
+          "alt": "Market and Trade Fair — photograph 13"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_014.jpg",
+          "alt": "Market and Trade Fair — photograph 14"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_015.jpg",
+          "alt": "Market and Trade Fair — photograph 15"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_016.jpg",
+          "alt": "Market and Trade Fair — photograph 16"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_017.jpg",
+          "alt": "Market and Trade Fair — photograph 17"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_018.jpg",
+          "alt": "Market and Trade Fair — photograph 18"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_019.jpg",
+          "alt": "Market and Trade Fair — photograph 19"
+        },
+        {
+          "src": "/gallery/Market%20and%20Trade%20Fair/IMG_020.jpg",
+          "alt": "Market and Trade Fair — photograph 20"
+        }
+      ]
+    },
+    {
+      "slug": "ndc-stakeholders",
+      "title": "Ndc Stakeholders",
+      "count": 10,
+      "preview": [
+        {
+          "src": "/gallery/NDC%20Stakeholders/IMG_005.jpg",
+          "alt": "Ndc Stakeholders — photograph 5"
+        },
+        {
+          "src": "/gallery/NDC%20Stakeholders/IMG_008.jpg",
+          "alt": "Ndc Stakeholders — photograph 8"
+        },
+        {
+          "src": "/gallery/NDC%20Stakeholders/IMG_007.jpg",
+          "alt": "Ndc Stakeholders — photograph 7"
+        },
+        {
+          "src": "/gallery/NDC%20Stakeholders/IMG_010.jpg",
+          "alt": "Ndc Stakeholders — photograph 10"
+        }
+      ],
+      "photos": [
+        {
+          "src": "/gallery/NDC%20Stakeholders/IMG_001.jpg",
+          "alt": "Ndc Stakeholders — photograph 1"
+        },
+        {
+          "src": "/gallery/NDC%20Stakeholders/IMG_002.jpg",
+          "alt": "Ndc Stakeholders — photograph 2"
+        },
+        {
+          "src": "/gallery/NDC%20Stakeholders/IMG_003.jpg",
+          "alt": "Ndc Stakeholders — photograph 3"
+        },
+        {
+          "src": "/gallery/NDC%20Stakeholders/IMG_004.jpg",
+          "alt": "Ndc Stakeholders — photograph 4"
+        },
+        {
+          "src": "/gallery/NDC%20Stakeholders/IMG_005.jpg",
+          "alt": "Ndc Stakeholders — photograph 5"
+        },
+        {
+          "src": "/gallery/NDC%20Stakeholders/IMG_006.jpg",
+          "alt": "Ndc Stakeholders — photograph 6"
+        },
+        {
+          "src": "/gallery/NDC%20Stakeholders/IMG_007.jpg",
+          "alt": "Ndc Stakeholders — photograph 7"
+        },
+        {
+          "src": "/gallery/NDC%20Stakeholders/IMG_008.jpg",
+          "alt": "Ndc Stakeholders — photograph 8"
+        },
+        {
+          "src": "/gallery/NDC%20Stakeholders/IMG_009.jpg",
+          "alt": "Ndc Stakeholders — photograph 9"
+        },
+        {
+          "src": "/gallery/NDC%20Stakeholders/IMG_010.jpg",
+          "alt": "Ndc Stakeholders — photograph 10"
+        }
+      ]
+    },
+    {
+      "slug": "stakeholders-meeting",
+      "title": "Stakeholders Meeting",
+      "count": 19,
+      "preview": [
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_002.jpg",
+          "alt": "Stakeholders Meeting — photograph 2"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_009.jpg",
+          "alt": "Stakeholders Meeting — photograph 9"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_018.jpg",
+          "alt": "Stakeholders Meeting — photograph 18"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_001.jpg",
+          "alt": "Stakeholders Meeting — photograph 1"
+        }
+      ],
+      "photos": [
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_001.jpg",
+          "alt": "Stakeholders Meeting — photograph 1"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_002.jpg",
+          "alt": "Stakeholders Meeting — photograph 2"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_003.jpg",
+          "alt": "Stakeholders Meeting — photograph 3"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_004.jpg",
+          "alt": "Stakeholders Meeting — photograph 4"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_005.jpg",
+          "alt": "Stakeholders Meeting — photograph 5"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_006.jpg",
+          "alt": "Stakeholders Meeting — photograph 6"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_007.jpg",
+          "alt": "Stakeholders Meeting — photograph 7"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_008.jpg",
+          "alt": "Stakeholders Meeting — photograph 8"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_009.jpg",
+          "alt": "Stakeholders Meeting — photograph 9"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_010.jpg",
+          "alt": "Stakeholders Meeting — photograph 10"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_011.jpg",
+          "alt": "Stakeholders Meeting — photograph 11"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_012.jpg",
+          "alt": "Stakeholders Meeting — photograph 12"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_013.jpg",
+          "alt": "Stakeholders Meeting — photograph 13"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_014.jpg",
+          "alt": "Stakeholders Meeting — photograph 14"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_015.jpg",
+          "alt": "Stakeholders Meeting — photograph 15"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_016.jpg",
+          "alt": "Stakeholders Meeting — photograph 16"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_017.jpg",
+          "alt": "Stakeholders Meeting — photograph 17"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_018.jpg",
+          "alt": "Stakeholders Meeting — photograph 18"
+        },
+        {
+          "src": "/gallery/Stakeholders%20Meeting/IMG_019.jpg",
+          "alt": "Stakeholders Meeting — photograph 19"
+        }
+      ]
+    },
+    {
+      "slug": "with-mr-peter-obi-and-campaign-flyers",
+      "title": "With Mr Peter Obi and Campaign Flyers",
+      "count": 11,
+      "preview": [
+        {
+          "src": "/gallery/With%20Mr%20Peter%20Obi%20and%20Campaign%20Flyers/IMG_007.jpg",
+          "alt": "With Mr Peter Obi and Campaign Flyers — photograph 7"
+        },
+        {
+          "src": "/gallery/With%20Mr%20Peter%20Obi%20and%20Campaign%20Flyers/IMG_008.jpg",
+          "alt": "With Mr Peter Obi and Campaign Flyers — photograph 8"
+        },
+        {
+          "src": "/gallery/With%20Mr%20Peter%20Obi%20and%20Campaign%20Flyers/IMG_005.jpg",
+          "alt": "With Mr Peter Obi and Campaign Flyers — photograph 5"
+        },
+        {
+          "src": "/gallery/With%20Mr%20Peter%20Obi%20and%20Campaign%20Flyers/IMG_006.jpg",
+          "alt": "With Mr Peter Obi and Campaign Flyers — photograph 6"
+        }
+      ],
+      "photos": [
+        {
+          "src": "/gallery/With%20Mr%20Peter%20Obi%20and%20Campaign%20Flyers/IMG_001.jpg",
+          "alt": "With Mr Peter Obi and Campaign Flyers — photograph 1"
+        },
+        {
+          "src": "/gallery/With%20Mr%20Peter%20Obi%20and%20Campaign%20Flyers/IMG_002.jpg",
+          "alt": "With Mr Peter Obi and Campaign Flyers — photograph 2"
+        },
+        {
+          "src": "/gallery/With%20Mr%20Peter%20Obi%20and%20Campaign%20Flyers/IMG_003.jpg",
+          "alt": "With Mr Peter Obi and Campaign Flyers — photograph 3"
+        },
+        {
+          "src": "/gallery/With%20Mr%20Peter%20Obi%20and%20Campaign%20Flyers/IMG_004.jpg",
+          "alt": "With Mr Peter Obi and Campaign Flyers — photograph 4"
+        },
+        {
+          "src": "/gallery/With%20Mr%20Peter%20Obi%20and%20Campaign%20Flyers/IMG_005.jpg",
+          "alt": "With Mr Peter Obi and Campaign Flyers — photograph 5"
+        },
+        {
+          "src": "/gallery/With%20Mr%20Peter%20Obi%20and%20Campaign%20Flyers/IMG_006.jpg",
+          "alt": "With Mr Peter Obi and Campaign Flyers — photograph 6"
+        },
+        {
+          "src": "/gallery/With%20Mr%20Peter%20Obi%20and%20Campaign%20Flyers/IMG_007.jpg",
+          "alt": "With Mr Peter Obi and Campaign Flyers — photograph 7"
+        },
+        {
+          "src": "/gallery/With%20Mr%20Peter%20Obi%20and%20Campaign%20Flyers/IMG_008.jpg",
+          "alt": "With Mr Peter Obi and Campaign Flyers — photograph 8"
+        },
+        {
+          "src": "/gallery/With%20Mr%20Peter%20Obi%20and%20Campaign%20Flyers/IMG_009.jpg",
+          "alt": "With Mr Peter Obi and Campaign Flyers — photograph 9"
+        },
+        {
+          "src": "/gallery/With%20Mr%20Peter%20Obi%20and%20Campaign%20Flyers/IMG_010.jpg",
+          "alt": "With Mr Peter Obi and Campaign Flyers — photograph 10"
+        },
+        {
+          "src": "/gallery/With%20Mr%20Peter%20Obi%20and%20Campaign%20Flyers/IMG_011.jpg",
+          "alt": "With Mr Peter Obi and Campaign Flyers — photograph 11"
+        }
+      ]
+    }
+  ]
 }
