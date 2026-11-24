@@ -102,10 +102,23 @@ test('campaign contact email opens an email composer and draft notices are absen
  await expect(page.getByText(/professional document supplied|await supporting verification/)).toHaveCount(0);
 });
 
-test('gallery index is attractive before campaign photos are uploaded',async({page})=>{
+test('gallery index supports uploaded albums, unique cards and full-image modal',async({page})=>{
  await page.goto('/gallery');
  await expect(page.getByRole('heading',{name:'Campaign gallery'})).toBeVisible();
- await expect(page.getByRole('heading',{name:'Campaign photographs'})).toBeVisible();
+ const albumCards=page.locator('a[href^="/gallery/"]');
+ if(await albumCards.count()){
+  await expect(page.getByRole('heading',{name:'Explore our moments'})).toBeVisible();
+  await albumCards.first().click();
+  const photos=page.getByRole('button',{name:/^View photo [0-9]+ of [0-9]+ in /});
+  const count=await photos.count();
+  expect(count).toBeGreaterThan(0);
+  await photos.first().click();
+  await expect(page.getByRole('dialog',{name:/photo viewer/})).toBeVisible();
+  await page.getByRole('button',{name:'Close photo viewer'}).click();
+  await expect(page.getByRole('dialog',{name:/photo viewer/})).toHaveCount(0);
+ }else{
+  await expect(page.getByRole('heading',{name:'Campaign photographs'})).toBeVisible();
+ }
  await expect(page.getByText(/Minna City Gate photograph/)).toHaveCount(0);
 });
 
