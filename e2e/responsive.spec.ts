@@ -174,3 +174,18 @@ test('registration shows one clear agreement and links to terms and privacy when
  await expect(page).toHaveURL(/\/terms$/);
  await expect(page.getByRole('heading',{name:'Terms & Conditions'})).toBeVisible();
 });
+
+test('live national assembly election countdown appears above the main header on mobile and desktop',async({page})=>{
+ for(const width of [320,375,1280]){
+  await page.setViewportSize({width,height:900});
+  await page.goto('/',{waitUntil:'domcontentloaded'});
+  const timer=page.getByTestId('election-countdown');
+  await expect(timer).toBeVisible();
+  await expect(timer).toHaveAttribute('data-election-date','2027-01-16');
+  await expect(page.locator('header')).toContainText('2027 ELECTION');
+  await expect(page.locator('header')).toContainText('16 JAN');
+  await expect(timer.locator('[data-countdown-unit="days"]')).toHaveText(/^\d+$/);
+  await expect(timer.locator('[data-countdown-unit="seconds"]')).toHaveText(/^\d{2}$/);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width+1);
+ }
+});
