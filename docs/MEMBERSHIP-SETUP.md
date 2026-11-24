@@ -1,5 +1,18 @@
 # Chanchaga membership registration / super admin release checklist
 
+## Dedicated Neon database — provisioned 24 November 2026
+
+- **Neon project:** Musa Ndakpayi Campaign Members (project ID `dawn-rice-17373994`).
+- **Owner:** user-managed Neon organisation `Octalve Vault`; this is a **new standalone project**, not the existing Octalve Vault or Octalve Cloud database.
+- **Region:** `aws-eu-central-1` (Frankfurt, Germany); PostgreSQL 18.
+- **Default branch:** `br-young-wind-bgt8bjb4` (`main`).
+- **Database and owner role:** `mun_members` / `mun_app`.
+- **Migration status:** all five tables in `scripts/schema.sql` tested on a temporary branch, applied to the default branch and verified. Temporary branch cleaned up.
+- **Records:** no demo member records; the administrator account has **not been seeded**. Use the secure local `pnpm seed:admin` workflow below.
+- **Vercel status:** the accessible Vercel connection exposes only `octalve-invoice`, not the Musa Ndakpayi project. **Do not** attach campaign membership data to an unrelated Vercel project. Reauthorize access to the intended website project before adding its private `DATABASE_URL` environment secret.
+- **Release flag:** keep `MEMBERSHIP_OPEN=false` until database credentials, seeded admin, Cloudflare Turnstile, retention and data-protection checks are verified end to end.
+
+
 ## Current scope
 - One public registration route `/register` (every registration is a MEMBER; no public approval queue or member accounts).
 - Eleven authentic Chanchaga wards, 379 polling unit options from an INEC-derived 2023 dataset. CSV/JSON source: `data/chanchaga-polling-units.json`. **Reconcile against INEC before the next election.**
