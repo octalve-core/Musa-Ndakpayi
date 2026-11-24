@@ -44,7 +44,7 @@ export function ElectionCountdownStrip(){
     {arrived?<span className="rounded bg-[#ffb71b] px-3 py-1 text-xs font-bold text-[#082d59]">Election day</span>:<>
      <span className="mr-0.5 text-[10px] font-semibold uppercase tracking-[.14em] text-[#ffcf6c] sm:mr-1">Countdown</span>
      {units.map((unit,i)=><span key={unit.name} className="flex items-baseline gap-0.5">
-      <span data-countdown-unit={unit.name.toLowerCase()} className="min-w-[2ch] text-center text-sm font-bold tabular-nums tracking-tight sm:text-base">{unit.value}</span>
+      <span data-countdown-unit={unit.name==='SEC'?'seconds':unit.name.toLowerCase()} className="min-w-[2ch] text-center text-sm font-bold tabular-nums tracking-tight sm:text-base">{unit.value}</span>
       <span className="text-[9px] font-medium text-slate-200">{unit.name}</span>
       {i<units.length-1&&<span aria-hidden="true" className="ml-0.5 text-slate-400">·</span>}
      </span>)}
