@@ -49,10 +49,10 @@ test('agenda opens deep-linked priority and supports arrow-key navigation',async
  await expect(page.getByRole('tabpanel')).toContainText('Flood resilience & safer communities');
  await selected.focus();
  await selected.press('ArrowRight');
- await expect(page.getByRole('tab',{name:/Roads, water/})).toHaveAttribute('aria-selected','true');
+ await expect(page.getByRole('tab',{name:/Roads & public infrastructure/})).toHaveAttribute('aria-selected','true');
  await expect(page).toHaveURL(/#infrastructure$/);
  await page.reload();
- await expect(page.getByRole('tab',{name:/Roads, water/})).toHaveAttribute('aria-selected','true');
+ await expect(page.getByRole('tab',{name:/Roads & public infrastructure/})).toHaveAttribute('aria-selected','true');
 });
 
 test('search filters sourced public records locally',async({page})=>{
