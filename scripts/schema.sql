@@ -40,6 +40,8 @@ CREATE TABLE IF NOT EXISTS campaign_admins (
   created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
   last_login_at TIMESTAMPTZ
 );
+-- The campaign has exactly one password-seeded super administrator.
+CREATE UNIQUE INDEX IF NOT EXISTS campaign_admins_singleton_idx ON campaign_admins ((true));
 CREATE TABLE IF NOT EXISTS campaign_sessions (
   token_hash CHAR(64) PRIMARY KEY,
   admin_id UUID NOT NULL REFERENCES campaign_admins(id) ON DELETE CASCADE,

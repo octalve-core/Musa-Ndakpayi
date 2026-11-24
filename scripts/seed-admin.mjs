@@ -11,6 +11,8 @@ const sql=neon(url);
 try{
  const exists=await sql.query("SELECT to_regclass('public.campaign_admins') AS table_name");
  if(!exists[0]?.table_name)throw new Error('Run scripts/schema.sql on the dedicated campaign database first');
+ const existing=await sql.query("SELECT username FROM campaign_admins LIMIT 1");
+ if(existing.length&&existing[0]?.username!==username)throw new Error('A super administrator is already registered. Do not seed a second account.');
  const hashed=hashPassword(password);
  const inserted=await sql.query("INSERT INTO campaign_admins(username,password_hash,must_change_password,active) VALUES($1,$2,TRUE,TRUE) ON CONFLICT(username) DO NOTHING RETURNING username",[username,hashed]);
  if(inserted.length)console.log('One super administrator created: '+username+'. Password rotation required on first login.');
