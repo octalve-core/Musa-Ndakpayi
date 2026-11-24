@@ -37,14 +37,16 @@ export function MemberForm({siteKey}:{siteKey:string}){
    phone:String(raw.get('phone')||''),
    wardCode:ward,puCode:pu,method,
    assistedBy:String(raw.get('assistedBy')||''),
-   assistedConsent:raw.get('assistedConsent')==='on',
-   adultConsent:raw.get('adultConsent')==='on',
-   membershipConsent:raw.get('membershipConsent')==='on',
-   communicationConsent:raw.get('communicationConsent')==='on',
+   // One deliberate agreement covers age, membership and authorised assistance.
+   assistedConsent:method==='Assisted'&&raw.get('termsAgreement')==='on',
+   adultConsent:raw.get('termsAgreement')==='on',
+   membershipConsent:raw.get('termsAgreement')==='on',
+   // A required registration agreement does not create optional marketing consent.
+   communicationConsent:false,
    website:String(raw.get('website')||''),
    turnstileToken:token
   };
-  if(!body.membershipConsent||!body.adultConsent){setError('Please read and accept the membership and age confirmations.');return;}
+  if(!body.membershipConsent||!body.adultConsent){setError('Please agree to the Terms & Conditions and Privacy Notice to register.');return;}
   if(siteKey&&!token){setError('Please complete the security check.');return;}
   setBusy(true);setError('');
   try{
@@ -78,13 +80,14 @@ export function MemberForm({siteKey}:{siteKey:string}){
      <label className="flex items-center gap-2"><input type="radio" name="method" checked={method==='Self'} onChange={()=>setMethod('Self')}/> Self registration</label>
      <label className="flex items-center gap-2"><input type="radio" name="method" checked={method==='Assisted'} onChange={()=>setMethod('Assisted')}/> Assisted registration</label>
     </div>
-    {method==='Assisted'&&<div className="space-y-3"><label className="block text-sm text-slate-800">Name of person assisting<input required name="assistedBy" maxLength={100} className="mt-2 h-12 w-full rounded-md border border-slate-300 px-4 outline-none focus:border-[#073f86]"/></label><label className="flex items-start gap-3 text-xs leading-6 text-slate-700"><input required name="assistedConsent" type="checkbox" className="mt-1"/>I confirm that the member has asked me to submit this information.</label></div>}
+    {method==='Assisted'&&<div className="space-y-2"><label className="block text-sm text-slate-800">Name of person assisting<input required name="assistedBy" maxLength={100} className="mt-2 h-12 w-full rounded-md border border-slate-300 px-4 outline-none focus:border-[#073f86]"/></label><p className="text-xs leading-6 text-slate-600">By accepting the terms below, you confirm the member is 18 or older and explicitly authorised this registration.</p></div>}
    </fieldset>
-   <fieldset className="space-y-4 border-t border-slate-200 pt-5"><legend className="text-sm font-semibold text-slate-900">Membership and privacy</legend>
-    <label className="flex items-start gap-3 text-sm leading-6 text-slate-700"><input required type="checkbox" name="adultConsent" className="mt-1 shrink-0"/>I confirm I am at least 18 years old.</label>
-    <label className="flex items-start gap-3 text-sm leading-6 text-slate-700"><input required type="checkbox" name="membershipConsent" className="mt-1 shrink-0"/>I voluntarily register as a member of the Musa Usman Ndakpayi campaign and consent to the processing of my name, phone number, ward, polling unit and campaign affiliation for membership management, including secure hosting in Germany. I have read the privacy notice and understand that my information will be processed outside Nigeria.</label>
-    <label className="flex items-start gap-3 text-sm leading-6 text-slate-700"><input type="checkbox" name="communicationConsent" className="mt-1 shrink-0"/>I also wish to receive campaign announcements by phone or message. (Optional)</label>
-    <p className="text-xs leading-6 text-slate-500">Read the <Link className="font-medium text-[#073f86] underline" href="/privacy">privacy notice</Link>. This registration is for campaign membership only, not INEC voter registration.</p>
+   <fieldset className="space-y-2 border-t border-slate-200 pt-5"><legend className="text-sm font-semibold text-slate-900">Agreement</legend>
+    <div className="flex items-start gap-3">
+     <input id="termsAgreement" required type="checkbox" name="termsAgreement" aria-label="I agree to the Terms and Conditions and Privacy Notice for campaign membership" className="mt-1 h-4 w-4 shrink-0 accent-[#073f86]"/>
+     <p className="text-sm leading-6 text-slate-700"><label htmlFor="termsAgreement" className="cursor-pointer">I agree to the </label><Link href="/terms" className="font-semibold text-[#073f86] underline underline-offset-2">Terms &amp; Conditions</Link> and <Link href="/privacy" className="font-semibold text-[#073f86] underline underline-offset-2">Privacy Notice</Link>.</p>
+    </div>
+    <p className="pl-7 text-xs leading-5 text-slate-500">You confirm you are 18+ and voluntarily consent to campaign membership, including processing your political affiliation. This is not INEC voter registration.</p>
    </fieldset>
    <div className="hidden" aria-hidden="true"><label>Website<input name="website" tabIndex={-1} autoComplete="off"/></label></div>
    {siteKey&&<div ref={widget} className="min-h-[68px]" aria-label="Security verification"/>}

@@ -6,7 +6,7 @@ import {dirname,resolve} from 'node:path';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const content=path=>readFileSync(resolve(root,path),'utf8');
 test('public pages are implemented and never lead to a missing route',()=>{
- for(const page of ['page','about/page','platforms/page','manifesto/page','events/page','news/page','gallery/page','contact/page','privacy/page','register/page','admin/login/page','admin/members/page']){
+ for(const page of ['page','about/page','platforms/page','manifesto/page','events/page','news/page','gallery/page','contact/page','privacy/page','terms/page','register/page','admin/login/page','admin/members/page']){
   assert.ok(existsSync(resolve(root,'app',page+'.tsx')),page+' missing');
  }
 });
@@ -127,7 +127,7 @@ test('registration backend validates consent, location and server-side verificat
  const route=content('app/api/members/route.ts');
  const gate=content('lib/member-registration.ts');
  assert.match(form,/membershipConsent/);
- assert.match(form,/communicationConsent/);
+ assert.match(form,/communicationConsent:false/);
  assert.match(form,/turnstileToken/);
  assert.match(route,/verifyUnit/);
  assert.match(route,/verifyTurnstile/);
@@ -178,9 +178,39 @@ test('optional Turnstile never skips backend consent, field validation, spam pro
  assert.match(route,/kind,visitor_hash,window_start,attempts/);
  assert.match(route,/\('PHONE'/);
  assert.match(route,/if\(Number\(phoneRate\[0\]\?\.attempts\|\|0\)>3\)/);
- assert.match(form,/name="adultConsent"/);
- assert.match(form,/name="membershipConsent"/);
- assert.match(form,/name="communicationConsent"/);
+ assert.match(form,/name="termsAgreement"/);
+ assert.match(form,/adultConsent:raw\.get\('termsAgreement'\)==='on'/);
+ assert.match(form,/membershipConsent:raw\.get\('termsAgreement'\)==='on'/);
+ assert.doesNotMatch(form,/name="communicationConsent"/);
  assert.match(privacy,/Frankfurt, Germany/);
- assert.match(form,/including secure hosting in Germany/);
+ assert.match(privacy,/What accepting the agreement means/);
+});
+
+test('one visible required registration agreement links to the full terms and privacy without marketing opt-in',()=>{
+ const form=content('components/members/member-form.tsx');
+ const schema=content('lib/member-registration.ts');
+ const privacy=content('app/privacy/page.tsx');
+ const terms=content('app/terms/page.tsx');
+ const route=content('app/api/members/route.ts');
+ const footer=content('components/layout/site-footer.tsx');
+ assert.equal((form.match(/type="checkbox"/g)||[]).length,1,'The form must show only one consent checkbox in both self and assisted modes');
+ assert.match(form,/name="termsAgreement"/);
+ assert.match(form,/required type="checkbox" name="termsAgreement"/);
+ assert.match(form,/href="\/terms"/);
+ assert.match(form,/href="\/privacy"/);
+ assert.match(form,/assistedConsent:method==='Assisted'&&raw\.get\('termsAgreement'\)==='on'/);
+ assert.match(form,/adultConsent:raw\.get\('termsAgreement'\)==='on'/);
+ assert.match(form,/membershipConsent:raw\.get\('termsAgreement'\)==='on'/);
+ assert.match(form,/communicationConsent:false/);
+ assert.match(schema,/adultConsent:z\.literal\(true\)/);
+ assert.match(schema,/membershipConsent:z\.literal\(true\)/);
+ assert.match(schema,/communicationConsent:z\.literal\(false\)\.default\(false\)/);
+ assert.match(route,/d\.method==='Assisted'/);
+ assert.match(route,/null,false,CONSENT_VERSION/);
+ assert.match(privacy,/Political affiliation is sensitive personal information/);
+ assert.match(privacy,/Frankfurt, Germany/);
+ assert.match(terms,/explicitly consent/);
+ assert.match(terms,/somebody else/);
+ assert.match(terms,/does not authorise optional promotional calls/);
+ assert.match(footer,/href="\/terms"/);
 });

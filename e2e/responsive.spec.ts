@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 
 const widths=[320,375,430,768,1024,1280,1440,1920] as const;
-const pages=['/','/about','/platforms','/manifesto','/events','/news','/gallery','/contact','/privacy','/register'] as const;
+const pages=['/','/about','/platforms','/manifesto','/events','/news','/gallery','/contact','/privacy','/terms','/register'] as const;
 
 for(const width of widths){
  test('responsive pages have no horizontal document overflow at '+width+'px',async({page})=>{
@@ -154,4 +154,23 @@ test('nine manifesto priorities include deep links for water and community inclu
  await page.goto('/manifesto#unity-in-diversity');
  await expect(page.getByRole('tab',{name:/Unity in diversity & inclusion/})).toHaveAttribute('aria-selected','true');
  await expect(page.getByRole('tabpanel')).toContainText('national integration, equal treatment');
+});
+
+test('registration shows one clear agreement and links to terms and privacy when enabled',async({page})=>{
+ await page.goto('/register');
+ const form=page.locator('form');
+ if(await form.count()===0){
+  await expect(page.getByText(/Online registration is not currently open/)).toBeVisible();
+  return;
+ }
+ await expect(form.locator('input[type="checkbox"]')).toHaveCount(1);
+ await expect(page.getByRole('checkbox',{name:/I agree to the Terms and Conditions and Privacy Notice/i})).not.toBeChecked();
+ await expect(form.getByRole('link',{name:'Terms & Conditions'})).toHaveAttribute('href','/terms');
+ await expect(form.getByRole('link',{name:'Privacy Notice'})).toHaveAttribute('href','/privacy');
+ await page.getByRole('radio',{name:'Assisted registration'}).check();
+ await expect(form.locator('input[type="checkbox"]')).toHaveCount(1);
+ await expect(page.getByText(/member is 18 or older and explicitly authorised/)).toBeVisible();
+ await page.getByRole('link',{name:'Terms & Conditions'}).first().click();
+ await expect(page).toHaveURL(/\/terms$/);
+ await expect(page.getByRole('heading',{name:'Terms & Conditions'})).toBeVisible();
 });
