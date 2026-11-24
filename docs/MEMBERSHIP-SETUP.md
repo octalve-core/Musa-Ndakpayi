@@ -1,5 +1,14 @@
 # Chanchaga membership registration / super admin release checklist
 
+## Live configuration update — 24 November 2026
+- Dedicated project `dawn-rice-17373994`, database `mun_members`, tables verified. The real `superadmin` has been seeded; password change remains mandatory on first login.
+- Vercel project `octalve-vault/musa-ndakpayi` is accessible and production `DATABASE_URL`, `ADMIN_CSRF_SECRET`, `REGISTRATION_HASH_SECRET`, `CRON_SECRET` and `PRIVACY_RETENTION_DAYS=365` have been configured.
+- **Turnstile is optional.** `TURNSTILE_ENABLED=false` allows standard consent-based registration without a Cloudflare widget. Server-side location validation, strict origin checks, the hidden honeypot, a ten-per-hour visitor-IP limit, a three-per-day contact-phone limit, and duplicate flags remain enforced.
+- To enable the external widget later: add `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `TURNSTILE_ALLOWED_HOSTNAMES` then set `TURNSTILE_ENABLED=true` and redeploy. Incomplete credentials block the public registration gate.
+- Sensitive political-affiliation information is hosted in Frankfurt, Germany. Verify the privacy-contact email is monitored and the cross-border transfer/privacy safeguards are appropriate before promoting the registration programme.
+- Registration becomes active only when `MEMBERSHIP_OPEN=true`, `PRIVACY_CONTROLLER_NAME`, `PRIVACY_CONTACT_EMAIL`, and all other non-Turnstile security settings are present and the seeded admin/database respond. No fake success on failures.
+
+
 ## Dedicated Neon database — provisioned 24 November 2026
 
 - **Neon project:** Musa Ndakpayi Campaign Members (project ID `dawn-rice-17373994`).
@@ -8,16 +17,16 @@
 - **Default branch:** `br-young-wind-bgt8bjb4` (`main`).
 - **Database and owner role:** `mun_members` / `mun_app`.
 - **Migration status:** all five tables in `scripts/schema.sql` tested on a temporary branch, applied to the default branch and verified. Temporary branch cleaned up.
-- **Records:** no demo member records; the administrator account has **not been seeded**. Use the secure local `pnpm seed:admin` workflow below.
-- **Vercel status:** the accessible Vercel connection exposes only `octalve-invoice`, not the Musa Ndakpayi project. **Do not** attach campaign membership data to an unrelated Vercel project. Reauthorize access to the intended website project before adding its private `DATABASE_URL` environment secret.
-- **Release flag:** keep `MEMBERSHIP_OPEN=false` until database credentials, seeded admin, Cloudflare Turnstile, retention and data-protection checks are verified end to end.
+- **Records:** no demo member records were inserted during setup. The administrator account has now been seeded and Neon-verified.
+- **Vercel status:** the connector now has access to `octalve-vault/musa-ndakpayi`, and production sensitive secrets are configured on that project only.
+- **Release flag:** `MEMBERSHIP_OPEN` is the controlled production release switch. Turnstile is not compulsory; all other required checks still apply.
 
 
 ## Current scope
 - One public registration route `/register` (every registration is a MEMBER; no public approval queue or member accounts).
 - Eleven authentic Chanchaga wards, 379 polling unit options from an INEC-derived 2023 dataset. CSV/JSON source: `data/chanchaga-polling-units.json`. **Reconcile against INEC before the next election.**
 - Adults-only explicit campaign membership consent; optional contact consent (never preselected); assisted registration with explicit permission.
-- Cloudflare Turnstile server-side hostname verification, IP rate limit and honeypot; registration closed by default.
+- Optional Cloudflare Turnstile (feature flag), independent per-IP/per-phone database throttles, origin/CSRF protection and honeypot; registration closed by default until switched on.
 - One dedicated Neon Postgres database, a seeded superadmin with salted scrypt password, first-login password change, revocable HttpOnly sessions, CSRF-guarded exports/deletion.
 - Dashboard: real counts, ward and polling-unit filters, date range, search, paginated detail pages, CSV export, member deletion and audit log.
 - Vercel daily retention cron removes expired members and unused rate/session rows, with a required CRON_SECRET.
@@ -39,15 +48,15 @@ Remove-Item Env:ADMIN_SEED_USERNAME
 Remove-Item Env:DATABASE_URL
 ```
     The seed inserts only when the username does not exist; it never silently overwrites an existing administrator. Password is **never** written to GitHub or printed to logs. The first successful sign-in requires the password to be changed.
-5. Configure an official Cloudflare Turnstile widget for the exact domain and obtain **site key** and **secret key**. Add production hostname(s) to `TURNSTILE_ALLOWED_HOSTNAMES` and verify the token in the deployed environment.
+5. Turnstile is **optional** while `TURNSTILE_ENABLED=false`. When using it later, provision site and secret keys, configure `TURNSTILE_ALLOWED_HOSTNAMES`, set `TURNSTILE_ENABLED=true` and redeploy. Never treat missing widget keys as permission to bypass a challenge when `TURNSTILE_ENABLED=true`.
 6. Add **Production** Vercel encrypted env variables (do not expose values):
     `DATABASE_URL`, `ADMIN_CSRF_SECRET`, `REGISTRATION_HASH_SECRET`, `CRON_SECRET`,
-    `TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`, `TURNSTILE_ALLOWED_HOSTNAMES`,
+    `TURNSTILE_ENABLED=false` (optional; keys and allowed hostnames only when enabled),
     `PRIVACY_RETENTION_DAYS` (e.g. 365), `PRIVACY_CONTROLLER_NAME`,
     `PRIVACY_CONTACT_EMAIL`, and initially `MEMBERSHIP_OPEN=false`.
     Generate independent strong 32+ character secrets (not the same password).
 7. Confirm the real public domain, privacy-controller identity, external-storage location and retention procedures. Campaign affiliation is sensitive personal data under Nigeria's Data Protection Act 2023. Validate permitted processing, safeguards and transfer rules before opening the public form.
-8. Deploy to a controlled staging or production deployment. Test one consenting adult registration with a real valid ward / polling unit and working Turnstile; confirm a record appears in the admin dashboard; test filters, CSV, logout, forced password rotation, deletion, duplicate flag and cron secret. This MUST NOT be treated as a successful live deployment until actually observed.
+8. Deploy to a controlled staging or production deployment. Verify that optional Turnstile is not required when disabled; run request validation tests without storing bogus personal records. A real end-to-end consenting adult registration must be independently observed later. Verify dashboard, filters, CSV, logout, forced password rotation, deletion, duplicate flag and cron secret; do not invent successes.
 9. Set `MEMBERSHIP_OPEN=true` in Production only after every checkpoint passes, then redeploy. No fake success response: the registration API returns 503 until all prerequisites are ready.
 
 ## Admin paths
@@ -61,7 +70,7 @@ Remove-Item Env:DATABASE_URL
 - Visitors consent to processing that exposes their political membership, independently of optional campaign messages.
 - Admin passwords are salted scrypt hashes; sessions are database-backed and expire after eight hours; admin export/delete actions have CSRF and origin checks.
 - Do not add public lists of names or polling-unit assignments.
-- The registration API fails closed if the Neon tables, seeded admin, secrets, privacy config, Turnstile, retention job secret or membership-open toggle are absent.
+- The registration API fails closed if the Neon tables, seeded admin, secrets, privacy config, retention job secret or membership-open toggle are absent. If `TURNSTILE_ENABLED=true`, it also fails closed without a fully configured Turnstile.
 - Photo folders should not contain identifying pictures of detained/vulnerable people without lawful rights/permissions.
 
 ## Daily retention
