@@ -26,5 +26,5 @@ export function registrationReady(){
  Number.isInteger(retention)&&retention>=30&&retention<=730&&
  Boolean(process.env.DATABASE_URL&&process.env.TURNSTILE_SITE_KEY&&process.env.TURNSTILE_SECRET_KEY&&
  process.env.TURNSTILE_ALLOWED_HOSTNAMES&&process.env.PRIVACY_CONTROLLER_NAME&&
- process.env.PRIVACY_CONTACT_EMAIL&&process.env.REGISTRATION_HASH_SECRET&&process.env.REGISTRATION_HASH_SECRET.length>=32);
+ process.env.PRIVACY_CONTACT_EMAIL&&process.env.REGISTRATION_HASH_SECRET&&process.env.REGISTRATION_HASH_SECRET.length>=32&&process.env.CRON_SECRET&&process.env.CRON_SECRET.length>=32);
 }

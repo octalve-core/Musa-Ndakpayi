@@ -9,6 +9,8 @@ export async function databaseReady(){
  try{
   const sql=getSql();
   const rows=await sql.query("SELECT to_regclass('public.campaign_members') IS NOT NULL AND to_regclass('public.campaign_admins') IS NOT NULL AND to_regclass('public.campaign_sessions') IS NOT NULL AND to_regclass('public.campaign_rate_limits') IS NOT NULL AND to_regclass('public.campaign_admin_audit') IS NOT NULL AS ready");
-  return rows[0]?.ready===true;
+  if(rows[0]?.ready!==true)return false;
+  const seeded=await sql.query("SELECT EXISTS(SELECT 1 FROM campaign_admins WHERE active=TRUE) AS seeded");
+  return seeded[0]?.seeded===true;
  }catch{return false;}
 }

@@ -31,7 +31,7 @@ test('gallery auto-discovers folders and preserves original image filenames with
   assert.equal(data.candidate,'/images/candidate/candidate-portrait.webp');
   assert.equal(data.albums.length,2);
   const a=data.albums.find(x=>x.slug==='visit-to-prisoners');
-  assert.equal(a.title,'Visit To Prisoners');
+  assert.equal(a.title,'Visit to Prisoners');
   assert.equal(a.photos.length,5);
   assert.equal(a.preview.length,4);
   assert.ok(a.photos.find(p=>p.src.includes('DSC%2002.jpg')));
