@@ -17,6 +17,7 @@ export function SiteFooter(){
      <p className="flex items-start gap-3 text-sm leading-7 text-slate-300"><MapPin className="mt-1 shrink-0 text-[#ffb71b]" size={18}/>{site.constituency}, {site.location}</p>
      <p className="mt-4 text-sm leading-7 text-slate-300">{site.party}</p>
      <a href="mailto:info@musandakpayi.com" className="mt-5 inline-flex min-h-11 items-center gap-2 break-all text-sm font-medium text-[#ffcc55] transition-colors hover:text-white">info@musandakpayi.com <ArrowUpRight size={16}/></a>
+     <Link href="/register" className="block w-fit text-sm font-medium text-[#ffcc55] hover:text-white">Become a member</Link>
     </div>
    </div>
    <div className="flex flex-col items-start justify-between gap-4 pt-7 text-xs leading-6 text-slate-400 sm:flex-row sm:items-center">

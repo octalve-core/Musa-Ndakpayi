@@ -15,9 +15,10 @@ import {priorities,publicRecord} from '@/lib/content';
 export default function HomePage(){
  return <>
  <HeroCarousel/>
- <section className="relative z-10 -mt-5 pb-12 sm:-mt-7 sm:pb-16"><Container><div className="grid gap-4 sm:grid-cols-2">
+ <section className="relative z-10 -mt-5 pb-12 sm:-mt-7 sm:pb-16"><Container><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
   <ActionCard title="The legislative agenda" description="Discover seven priorities and practical legislative pathways for the constituency." icon={BookOpenText} href="/manifesto" accent="#ffb71b"/>
   <ActionCard title="Public statements" description="Follow the latest statements, media coverage and community updates." icon={UsersRound} href="/news" accent="#18a65b"/>
+  <ActionCard title="Become a member" description="Join the campaign community through secure online registration." icon={UsersRound} href="/register" accent="#c92230"/>
  </div></Container></section>
  <section className="py-16 sm:py-24"><Container><div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
   <div><p className="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-[#0a5d9c]">The candidate</p>
@@ -45,6 +46,6 @@ export default function HomePage(){
   <ButtonLink href="/manifesto" showArrow>Read the agenda</ButtonLink>
  </div></Container></section>
  <section className="py-16 sm:py-20"><Container><div className="grid items-center gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-12"><HomeGalleryPreview/><div><p className="text-xs font-semibold uppercase tracking-[.19em] text-[#0a5d9c]">Our constituency</p><h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">Chanchaga in pictures.</h2><p className="mt-5 text-sm leading-8 text-slate-600">Explore the places and stories that shape Chanchaga, beginning with Minna and its important landmarks.</p><ButtonLink href="/gallery" variant="outline" showArrow className="mt-7">View gallery</ButtonLink></div></div></Container></section>
- <section className="bg-[#073f86] py-20 text-white sm:py-24"><Container className="text-center"><p className="text-xs font-semibold uppercase tracking-[.2em] text-[#ffd05c]">Public participation</p><h2 className="mx-auto mt-4 max-w-3xl text-3xl font-semibold tracking-[-.04em] sm:text-4xl">Representation begins with listening.</h2><p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-blue-100">Explore the published issues, follow updates and learn more about opportunities for public dialogue across Chanchaga.</p><div className="mt-8 flex flex-wrap justify-center gap-3"><ButtonLink href="/events" variant="gold" showArrow>Events & dialogue</ButtonLink><ButtonLink href="/contact" variant="light">Contact information</ButtonLink></div></Container></section>
+ <section className="bg-[#073f86] py-20 text-white sm:py-24"><Container className="text-center"><p className="text-xs font-semibold uppercase tracking-[.2em] text-[#ffd05c]">Public participation</p><h2 className="mx-auto mt-4 max-w-3xl text-3xl font-semibold tracking-[-.04em] sm:text-4xl">Representation begins with listening.</h2><p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-blue-100">Explore the published issues, follow updates and learn more about opportunities for public dialogue across Chanchaga.</p><div className="mt-8 flex flex-wrap justify-center gap-3"><ButtonLink href="/events" variant="gold" showArrow>Events & dialogue</ButtonLink><ButtonLink href="/contact" variant="light">Contact information</ButtonLink><ButtonLink href="/register" variant="light">Become a member</ButtonLink></div></Container></section>
  </>;
 }
