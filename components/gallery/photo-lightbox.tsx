@@ -7,16 +7,17 @@ import type {GalleryPhoto} from '@/lib/gallery-types';
 export function PhotoLightbox({photos,title}:{photos:GalleryPhoto[];title:string}){
  const [active,setActive]=useState<number|null>(null);
  const closeRef=useRef<HTMLButtonElement>(null);
+ const imagePanelRef=useRef<HTMLDivElement>(null);
  const triggers=useRef<(HTMLButtonElement|null)[]>([]);
  const total=photos.length;
- const close=()=>setActive(null);
+ 
  useEffect(()=>{
   if(active===null)return;
   const original=document.body.style.overflow;
   document.body.style.overflow='hidden';
   closeRef.current?.focus();
   const onKey=(event:KeyboardEvent)=>{
-   if(event.key==='Escape'){event.preventDefault();close();}
+   if(event.key==='Escape'){event.preventDefault();setActive(null);requestAnimationFrame(()=>triggers.current[active]?.focus());}
    if(event.key==='ArrowRight'){event.preventDefault();setActive(current=>current===null?null:(current+1)%total);}
    if(event.key==='ArrowLeft'){event.preventDefault();setActive(current=>current===null?null:(current+total-1)%total);}
    if(event.key==='Tab'){
@@ -28,8 +29,24 @@ export function PhotoLightbox({photos,title}:{photos:GalleryPhoto[];title:string
     else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
    }
   };
+  const onPointerDown=(event:PointerEvent)=>{
+   const panel=imagePanelRef.current;
+   if(!panel||!(event.target instanceof Node)||!panel.contains(event.target))return;
+   const img=panel.querySelector('img');
+   if(!img||!img.naturalWidth||!img.naturalHeight)return;
+   const box=img.getBoundingClientRect();
+   const scale=Math.min(box.width/img.naturalWidth,box.height/img.naturalHeight);
+   const drawWidth=img.naturalWidth*scale,drawHeight=img.naturalHeight*scale;
+   const left=box.left+(box.width-drawWidth)/2,top=box.top+(box.height-drawHeight)/2;
+   if(event.clientX<left||event.clientX>left+drawWidth||event.clientY<top||event.clientY>top+drawHeight){
+    setActive(null);
+    requestAnimationFrame(()=>triggers.current[active]?.focus());
+   }
+  };
   window.addEventListener('keydown',onKey);
-  return()=>{document.body.style.overflow=original;window.removeEventListener('keydown',onKey);};
+  // The dark letterbox around an uncropped photograph also dismisses the modal.
+  window.addEventListener('pointerdown',onPointerDown);
+  return()=>{document.body.style.overflow=original;window.removeEventListener('keydown',onKey);window.removeEventListener('pointerdown',onPointerDown);};
  },[active,total]);
  const show=(i:number)=>{setActive(i);};
  const dismiss=()=>{
@@ -51,7 +68,7 @@ export function PhotoLightbox({photos,title}:{photos:GalleryPhoto[];title:string
      <div className="min-w-0"><p className="truncate text-sm font-semibold">{title}</p><p className="mt-1 text-xs text-white/65">{active+1} of {total}</p></div>
      <button ref={closeRef} type="button" onClick={dismiss} aria-label="Close photo viewer" className="flex size-11 items-center justify-center rounded-full bg-white/15 transition-colors hover:bg-white/25"><X size={22}/></button>
     </div>
-    <div className="relative min-h-0 flex-1 overflow-hidden rounded-xl bg-black/40">
+    <div ref={imagePanelRef} className="relative min-h-0 flex-1 overflow-hidden rounded-xl bg-black/40">
      <Image key={photos[active].src} src={photos[active].src} alt={photos[active].alt} fill sizes="100vw" className="object-contain"/>
     </div>
     <div className="flex shrink-0 items-center justify-between gap-4 pt-4 text-white">

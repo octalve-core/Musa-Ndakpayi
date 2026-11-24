@@ -20,3 +20,17 @@
 - No electoral certainty, unverified opinion poll, invented 2023 ward results, manufactured achievements, donor counts or anonymous testimonials.
 - Identify source at every public-record article and distinguish reporting from verified fact.
 - Official photos, logo, social accounts, email, phone, signed biography and final manifesto still require supplied originals/permission.
+
+## New constituency priorities — 24 November 2026
+
+**Priority 08 — Reliable water & water security.** 2026 reporting documents serious supply shortages in Minna/Chanchaga and the cost burden of alternative water sources. On 23 November 2026, the Niger State Government announced emergency water tanker distribution across Chanchaga and Bosso. This is evidence of a live public-service issue, not proof that a legislative action or long-term water project has already been delivered.
+- [News Agency of Nigeria, 25 February 2026](https://gazettengr.com/gov-bago-directs-council-ministry-to-fix-water-scarcity-in-minna/) — council and State Ministry of Water Resources response, dam desilting discussion.
+- [The Nation, 2026](https://thenationonlineng.net/minna-residents-groan-over-water-scarcity-despite-billions-of-naira-allocated/) — residents' experiences, challenges at Chanchaga Water Works.
+- [AchieversFocus, 23 November 2026](https://www.achieversfocus.com/2026/11/23/niger-state-government-approves-immediate-water-tanker-distribution-to-ease-scarcity-in-chanchaga-bosso/) — state-authorised tanker distribution.
+- [UN-Habitat Niger State diagnostic](https://unhabitat.org/sites/default/files/2025/06/diagnostic_report-new_final_copy.pdf) — structural water-access issues, with some underlying data dated 2013; avoid implying those historical figures are current.
+
+**Priority 09 — Unity in diversity & inclusion.** Constitutional principles of equal treatment and integration support an inclusive constituency platform for people from different Nigerian communities living in Chanchaga.
+- [Nigerian Senate Committee on Constitution Review — Chapter II, sections 14–15](https://sccr.gov.ng/?p=125).
+- [Constitution of Nigeria, 2023 consolidated view](https://www.constituteproject.org/constitution/Nigeria_2023).
+
+**Responsibility distinctions.** Water treatment, local distribution, state waterworks and township works ordinarily involve Niger State/local authorities; a House of Representatives member can advance suitable federal policy, budget scrutiny, oversight and intergovernmental advocacy. Community unity measures focus on inclusive consultations, fair access and non-discrimination; do not claim measured outcomes or invented programmes. The campaign supplied these two additional manifesto priorities on 24 November 2026.

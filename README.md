@@ -31,7 +31,7 @@ Albums:
 - public/gallery/community-outreach/IMG_1234.webp
 - public/gallery/[another activity name]/[any picture name].png
 
-Create folders as needed. Filenames can be arbitrary ordinary JPG/JPEG/PNG/WebP/AVIF names; new image or album folders require no edits to React source. Generate index with pnpm media:build. Both pnpm dev and pnpm build automatically regenerate it. On a Vercel Git-linked project, a subsequent push and build will publish new photo folders.
+Create folders as needed. Filenames can be JPG/JPEG/PNG/WebP/AVIF; new image or album folders require no edits to React source. The four special hero/candidate slots can use .jpg, .jpeg, .png, .webp or .avif — keep the same base name and only one format per slot. Generate index with pnpm media:build. Both pnpm dev and pnpm build automatically regenerate it. On a Vercel Git-linked project, a subsequent push and build will publish new photo folders.
 
 Read docs/PHOTO-UPLOADS.md for full photo instructions and precautions concerning pictures of vulnerable or detained individuals.
 

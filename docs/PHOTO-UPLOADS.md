@@ -43,3 +43,12 @@ When adding folders with a running dev server, rerun `pnpm media:build` and refr
 **Privacy and rights:** upload only photos that the campaign may lawfully publish, particularly when people in prisons, detention facilities, medical settings or vulnerable circumstances are identifiable. Confirm consent and appropriate permissions before placing such photographs on the public site. Avoid exposing sensitive identities or minors without appropriate lawful permission.
 
 No image names or real photographs are fabricated in this repository. The public site uses a branded visual fallback until you provide real images.
+
+## You can keep JPEG or PNG for the four named photo positions
+If your photos are JPG/JPEG/PNG, you do not have to convert them to WebP. The homepage and candidate photo slots also accept:
+- `public/images/hero/slide-01.jpg`, `slide-02.png`, `slide-03.jpeg`
+- `public/images/candidate/candidate-portrait.jpg`
+
+The base filename (`slide-01`, `slide-02`, `slide-03`, `candidate-portrait`) must match. Use **only one image per slot**; for example, don't keep `slide-01.jpg` alongside `slide-01.webp`. The build detects duplicate formats and reports an error. Conversion to WebP remains a good optimization but is optional. Never merely rename a JPEG to .webp.
+
+**Seventeen-photo album behaviour:** A folder containing 17 supported images generates exactly 17 separate, fixed-aspect 4:3 cards (without duplicate images) on its album page. The album landing card uses four distinct preview images. Each album image opens at its natural aspect ratio in a modal. Click the dark background outside the picture (including the empty letterbox) or use the close button/Escape.

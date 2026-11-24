@@ -49,10 +49,10 @@ test('agenda opens deep-linked priority and supports arrow-key navigation',async
  await expect(page.getByRole('tabpanel')).toContainText('Flood resilience & safer communities');
  await selected.focus();
  await selected.press('ArrowRight');
- await expect(page.getByRole('tab',{name:/Roads, water/})).toHaveAttribute('aria-selected','true');
+ await expect(page.getByRole('tab',{name:/Roads & public infrastructure/})).toHaveAttribute('aria-selected','true');
  await expect(page).toHaveURL(/#infrastructure$/);
  await page.reload();
- await expect(page.getByRole('tab',{name:/Roads, water/})).toHaveAttribute('aria-selected','true');
+ await expect(page.getByRole('tab',{name:/Roads & public infrastructure/})).toHaveAttribute('aria-selected','true');
 });
 
 test('search filters sourced public records locally',async({page})=>{
@@ -127,4 +127,17 @@ test('private administrator login accepts no assumed credentials',async({page})=
  await expect(page.getByLabel('Password',{exact:true})).toHaveAttribute('type','text');
  await page.goto('/admin/members');
  await expect(page).toHaveURL(/\/admin\/login$/);
+});
+
+test('nine manifesto priorities include deep links for water and community inclusion',async({page})=>{
+ await page.goto('/platforms');
+ await expect(page.getByRole('heading',{name:'Nine priorities for Chanchaga'})).toBeVisible();
+ await expect(page.getByRole('heading',{name:'Reliable water & water security'})).toBeVisible();
+ await expect(page.getByRole('heading',{name:'Unity in diversity & inclusion'})).toBeVisible();
+ await page.goto('/manifesto#water-access');
+ await expect(page.getByRole('tab',{name:/Reliable water & water security/})).toHaveAttribute('aria-selected','true');
+ await expect(page.getByRole('tabpanel')).toContainText('treatment capacity, pipeline repairs');
+ await page.goto('/manifesto#unity-in-diversity');
+ await expect(page.getByRole('tab',{name:/Unity in diversity & inclusion/})).toHaveAttribute('aria-selected','true');
+ await expect(page.getByRole('tabpanel')).toContainText('national integration, equal treatment');
 });
