@@ -6,7 +6,7 @@ import {dirname,resolve} from 'node:path';
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const content=path=>readFileSync(resolve(root,path),'utf8');
 test('public pages are implemented and never lead to a missing route',()=>{
- for(const page of ['page','about/page','platforms/page','manifesto/page','events/page','news/page','gallery/page','contact/page','privacy/page']){
+ for(const page of ['page','about/page','platforms/page','manifesto/page','events/page','news/page','gallery/page','contact/page','privacy/page','register/page','admin/login/page','admin/members/page']){
   assert.ok(existsSync(resolve(root,'app',page+'.tsx')),page+' missing');
  }
 });
@@ -109,4 +109,41 @@ test('public pages contain no draft biography qualifications or verification not
   'unverified contact information'
  ];
  for(const phrase of banned)assert.ok(!text.includes(phrase),'Public draft text remains: '+phrase);
+});
+
+test('Chanchaga electoral directory is complete and scoped to one constituency',()=>{
+ const data=JSON.parse(content('data/chanchaga-polling-units.json'));
+ assert.equal(data.lga,'Chanchaga');
+ assert.equal(data.state,'Niger');
+ assert.equal(data.wards.length,11);
+ const units=data.wards.flatMap(w=>w.units);
+ assert.equal(units.length,379);
+ assert.equal(new Set(units.map(p=>p.code)).size,379);
+ for(const ward of data.wards)for(const pu of ward.units)assert.ok(pu.code.startsWith('26/06/'+ward.code+'/'));
+});
+
+test('registration backend validates consent, location and server-side verification',()=>{
+ const form=content('components/members/member-form.tsx');
+ const route=content('app/api/members/route.ts');
+ const gate=content('lib/member-registration.ts');
+ assert.match(form,/membershipConsent/);
+ assert.match(form,/communicationConsent/);
+ assert.match(form,/turnstileToken/);
+ assert.match(route,/verifyUnit/);
+ assert.match(route,/verifyTurnstile/);
+ assert.match(route,/getSql\(\)/);
+ assert.match(gate,/MEMBERSHIP_OPEN/);
+ assert.match(gate,/CRON_SECRET/);
+});
+
+test('private admin pages and one-time seed never contain a default password',()=>{
+ for(const path of ['app/admin/login/page.tsx','app/admin/members/page.tsx','app/admin/change-password/page.tsx','scripts/seed-admin.mjs','app/api/admin/export/route.ts'])assert.ok(existsSync(resolve(root,path)));
+ const seed=content('scripts/seed-admin.mjs');
+ assert.match(seed,/ADMIN_SEED_PASSWORD/);
+ assert.match(seed,/ON CONFLICT\(username\) DO NOTHING/);
+ assert.doesNotMatch(seed,/superadmin123|password123|default123/i);
+ const sessions=content('lib/admin-auth.ts');
+ assert.match(sessions,/campaign_sessions/);
+ assert.match(sessions,/SESSION_AGE/);
+ assert.match(sessions,/httpOnly:true/);
 });
